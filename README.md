@@ -22,6 +22,7 @@ Read this before opening a ticket.
 - If you have an upgraded part already in the vehicle, adding a different level item will remove the previous upgrade from the car and place it in your inventory.
 - The mechanic's `toolbox` item is used to remove these upgrades and set them back to stock.
 - The items classed as costmetic items include:
+```
 	- car_armor
 	- brakes (level 1 to 3)
 	- engines (level 1 to 4)
@@ -31,7 +32,7 @@ Read this before opening a ticket.
 	- bprooftires
 	- turbo
 	- headlights
-
+```
 ------------------
 ## Cosmetic Items
 
@@ -39,6 +40,7 @@ Read this before opening a ticket.
 - Stand next to or get in the vehicle and use these items, if options are available for the car this will bring up a menu that shows a list of possible cosmetics
 - To reset back to default, use another of the same item, as you are putting the "stock" on
 - The items classed as costmetic items include:
+```
 	- bumper
 	- exhaust
 	- externals
@@ -56,7 +58,7 @@ Read this before opening a ticket.
 	- spoiler
 	- tires
 	- tint_supplies
-
+```
 ------------------
 ## Configuration - Config.lua
 
@@ -165,34 +167,127 @@ There is little snippets of information on each line for these, but this is a mo
 ```
 
 ### Config.ManualRepairCost
+- This is the amount to charge people for a repair at the manual repair benches.
+- The default is `5000` but I recommend setting this to a high amount for your server
+- The intention of the mechanic script is to provide RP to the server, there is no RP in using a prop instead of talking to someone.
 
 ### Config.ManualRepairBased
+- This overrides the previous setting `ManualRepairCost`
+- Setting this to true sets the price of the repair to be based on the cost of the vehicle in your vehicles.lua
 
 ### Config.ManualRepairPercent
+- This is only used if `ManualRepairBased` is enabled.
+- This needs to be set to the percentage of the value of the vehicle you want to charge people per repair
+- For example:
+	- 5% of a $10,000 car would be $500 per repair
+	- 10% of a $200,000 car would be $20,000 per repair
 
 ### Config.repairEngine
+- When enabled this will include engine repairs in the Repair Bench process
+- If disabled it will only attempt to repair the body
 
 ### Config.repairExtras
+- Enabling this will include Extra Damages repair that come from `qb-mechanicjob`
+- if `qb-mechanicjob` is not found but this is true, it will skip over these extras
 
 ### Config.dutyMessage
+- I left his here as people were giving me different reasons for why they wanted the repair benches in the script
+- I'm leaving this up to them for how they want to phrase their notification.
+- Default: `"There is a Mechanic on duty!"`
 
 ### Config.repairAnimate
+- When `true` this will add a small animatied sequence to the repair of the vehicle, instead of people just sitting and watching a progressbar
 
 ### Config.repairSpeed
+- The time between each task while using repairAnimate. `1500` Seems to be a reasonable time for each one
+
+### Config.NosRefillCharge
+- This only is used at Nos Refill stations, if you have added them to your locations in locations.lua
+- The amount in dollars required for a player to refill an Empty NOS can.
+- Note: There is also the option of a mechanic crafting them for you.
+- The default is `1000`
+
+
+### Config.DiscordPreview
+- This enables or disables the Discord Reports for the `/preview` command
+- When `true` this system will send the report to a specified discord channel using a webhook
+- When `false` this system will be ignored/disabled
+
+### Config.DiscordDefault
+- So people seem to be confused by this one.
+- This is the default channel that will be used, no matter where you are.
+- If you haven't set specific discord channels in a location, it with "default" to this link.
+
+### Config.DiscordColour
+- You don't need to touch this, but this is the default colour of the post in the discord channel
+- The default colour is `16753920` - this is a "decimal" colour number, which is a yellow colour.
 
 
 ### Config.Repair*:
-These are the repair costs and materials that are needed
-Each one has to have a set item
-The cost for each is a MAX amount, eg. 100% damage would be this number, 50% would be half this number.
+- These are the repair costs and materials that are needed
+- Each one has to have **1** set item
+- The cost for each is a MAX amount, eg. 100% damage would be this number, 50% would be half this number.
+- The defaults:
+```
+	RepairEngine = "iron",
+	RepairEngineCost = 8,
+	--
+	RepairBody = "plastic",
+	RepairBodyCost = 8,
+	--
+	RepairRadiator = "plastic",
+	RepairRadiatorCost = 8,
+	--
+	RepairAxle = "steel",
+	RepairAxleCost = 8,
+	--
+	RepairBrakes = "iron",
+	RepairBrakesCost = 8,
+	--
+	RepairClutch = "aluminum",
+	RepairClutchCost = 8,
+	--
+	RepairFuel = "plastic",
+	RepairFuelCost = 8,
+```
 
-### Ducttape configs:
-This are for the alternative item to repairkits
-They are customisable and let even set the max amount of how much the parts get repaired
+### Duct tape:
+- Many people forgot these are a thing while begging me to add repair benches..
+- The Ducttape item is intended to be an alternative and customisable version of repairkits
+- They are customisable and let even set the max amount of how much the parts get repaired
+
+### Config.DuctSimpleMode
+- This sets the duct tape item into simple mode, repairing to the amount every time
+- `true` makes duct tape set every use to the amount set below at `MaxDuctEngine`
+- `false` uses the `DuctAmountEngine` value to repair the by vehicle each use
+
+### Config.MaxDuctEngine
+- This is the MAX value the engine can be repaired by, leave this below 1000(100%) so people still need to use mechanic's
+- If `DuctSimpleMode` is `true` will set it straight to this amount
+- If `DuctSimpleMode` is `false` it will be the max amount it can be repaired to
+- Default = `450.0` - (45% health)
+
+### Config.DuctAmountEngine
+- The amount to repair your engine by each ducttape item use
+- This is only used if `DuctSimpleMode` is `false`
+- Default = `100.0` - (10% Health)
+
+### Config.DuctTapeBody
+- Setting this to `true` allows the body to be repaired along side the 
+ = true,  --Enable if you want duct tape to repair body at the same time as engine
+### Config.MaxDuctBody
+ = 450.0,
+### Config.DuctAmountBody
+ = 100.0, -- Repairs the engine by 10% each use
+
+### Config.RemoveDuctTape
+ = true, --If Enabled it will remove 1 duct after use. If false it will be constantly reusable
+
+
 
 ### Config.Jobroles:
-These are the job roles that you want to be able to use the items in this script (if Config.RequiresJob is enabled)
-The defualt setting is just "mechanic".
+- These are the job roles that you want to be able to use the items in this script (if Config.RequiresJob is enabled)
+- The defualt setting is just "mechanic".
 
 ---
 
