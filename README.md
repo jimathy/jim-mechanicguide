@@ -1,6 +1,17 @@
 # Mechanic Guide
 Read this before opening a ticket.
 
+1. [Performance Items](https://github.com/jimathy/jim-mechanicguide#performance-items)
+2. [Cosmetic Items](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
+3. [Config.lua](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
+	- [Config.Debug]()
+	- [Config.img]()
+	- [Config.JimShops]()
+	- [Config.JimMenu]()
+	- [Config.distkph]()
+4.
+5.
+
 ------------------
 ## Performance Items
 
@@ -66,7 +77,7 @@ There is little snippets of information on each line for these, but this is a mo
 - I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
 
 ### Config.JimShops
-- Set this to true if you are using my free qb-shops alternative, jim-shops (https://github.com/jimathy/jim-shops)
+- Set this to true if you are using my free qb-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
 - Set to false to use default inventory style shops
 
 ### Config.JimMenu
