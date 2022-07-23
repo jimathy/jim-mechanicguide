@@ -5,15 +5,61 @@ Read this before opening a ticket.
 ### Index:
 1. [Performance Items](https://github.com/jimathy/jim-mechanicguide#performance-items)
 2. [Cosmetic Items](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
-4. [Mechanic Items](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
-4. [Config.lua](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
-	1. [Config.Debug]()
-	2. [Config.img]()
-	3. [Config.JimShops]()
-	4. [Config.JimMenu]()
-	5. [Config.distkph]()
-5. []
-6. []
+3. [Mechanic Items](https://github.com/jimathy/jim-mechanicguide#mechanic-items)
+4. [Toolbox](https://github.com/jimathy/jim-mechanicguide#toolbox--check_tuneslua)
+5. [Mechanic_Tools](https://github.com/jimathy/jim-mechanicguide#mechanic_tools--repairlua)
+6. [Nitrous](https://github.com/jimathy/jim-mechanicguide#nitrous--noslua)
+	1. [Nos.lua Config](https://github.com/jimathy/jim-mechanicguide#nos-config-options)
+7. [Config.lua](https://github.com/jimathy/jim-mechanicguide#configuration---configlua)
+	1. [Config.Lan](https://github.com/jimathy/jim-mechanicguide#configlan)
+	1. [Config.Debug](https://github.com/jimathy/jim-mechanicguide#configdebug)
+	2. [Config.img](https://github.com/jimathy/jim-mechanicguide#configimg)
+	3. [Config.JimShops](https://github.com/jimathy/jim-mechanicguide#configjimshops)
+	4. [Config.JimMenu](https://github.com/jimathy/jim-mechanicguide#configjimmenu)
+	5. [Config.distkph](https://github.com/jimathy/jim-mechanicguide#configdistkph)
+	6. [Config.isVehicleOwned](https://github.com/jimathy/jim-mechanicguide#configisvehicleowned)
+	7. [Config.RequiresJob](https://github.com/jimathy/jim-mechanicguide#configrequiresjob)
+	8. [Config.LocationBlips](https://github.com/jimathy/jim-mechanicguide#configlocationblips)
+	9. [Config.LocationRequired](https://github.com/jimathy/jim-mechanicguide#configlocationrequired)
+	10. [Config.CostmeticJob](https://github.com/jimathy/jim-mechanicguide#configcostmeticjob)
+	11. [Config.FreeRepair](https://github.com/jimathy/jim-mechanicguide#configfreerepair)
+	12. [Config.StashRepair](https://github.com/jimathy/jim-mechanicguide#configstashrepair)
+	13. [Config.Stores](https://github.com/jimathy/jim-mechanicguide#configstores)
+	14. [Config.StashCraft](https://github.com/jimathy/jim-mechanicguide#configstashcraft)
+	15. [Config.Crafting](https://github.com/jimathy/jim-mechanicguide#configcrafting)
+	16. [Config.PreviewPhone](https://github.com/jimathy/jim-mechanicguide#configpreviewphone)
+	17. [Config.PreviewJob](https://github.com/jimathy/jim-mechanicguide#configpreviewjob)
+	18. [Config.PreviewLocation](https://github.com/jimathy/jim-mechanicguide#configpreviewlocation)
+	19. [Config.PhoneMail](https://github.com/jimathy/jim-mechanicguide#configphonemail)
+	20. [Config.CosmeticRemoval](https://github.com/jimathy/jim-mechanicguide#configcosmeticremoval)
+	21. [Config.ShowOdo](https://github.com/jimathy/jim-mechanicguide#configshowodo)
+	22. [Config.OdoLocation](https://github.com/jimathy/jim-mechanicguide#configodolocation)
+	23. [Config.ManualRepairCost](https://github.com/jimathy/jim-mechanicguide#configmanualrepaircost)
+	24. [Config.ManualRepairBased](https://github.com/jimathy/jim-mechanicguide#configmanualrepairbased)
+	25. [Config.ManualRepairPercent](https://github.com/jimathy/jim-mechanicguide#configmanualrepairpercent)
+	26. [Config.repairEngine](https://github.com/jimathy/jim-mechanicguide#configrepairengine)
+	27. [Config.repairExtras](https://github.com/jimathy/jim-mechanicguide#configrepairextras)
+	28. [Config.dutyMessage](https://github.com/jimathy/jim-mechanicguide#configdutymessage)
+	29. [Config.repairAnimate](https://github.com/jimathy/jim-mechanicguide#configrepairanimate)
+	30. [Config.repairSpeed](https://github.com/jimathy/jim-mechanicguide#configrepairspeed)
+	31. [Config.NosRefillCharge](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
+	32. [Config.DiscordPreview](https://github.com/jimathy/jim-mechanicguide#configdiscordpreview)
+	33. [Config.DiscordDefault](https://github.com/jimathy/jim-mechanicguide#configdiscorddefault)
+	34. [Config.DiscordColour](https://github.com/jimathy/jim-mechanicguide#configdiscordcolour)
+	35. [Repair requirements](https://github.com/jimathy/jim-mechanicguide#repairrequirements)
+	36. [Duct tape](https://github.com/jimathy/jim-mechanicguide#duct-tape)
+		1. [Config.DuctSimpleMode](https://github.com/jimathy/jim-mechanicguide#configductsimplemode)
+		2. [Config.MaxDuctEngine](https://github.com/jimathy/jim-mechanicguide#configmaxductengine)
+		3. [Config.DuctAmountEngine](https://github.com/jimathy/jim-mechanicguide#configductamountengine)
+		4. [Config.DuctTapeBody](https://github.com/jimathy/jim-mechanicguide#configducttapebody)
+		5. [Config.MaxDuctBody](https://github.com/jimathy/jim-mechanicguide#configmaxductbody)
+		6. [Config.DuctAmountBody](https://github.com/jimathy/jim-mechanicguide#configductamountbody)
+		7. [Config.RemoveDuctTape](https://github.com/jimathy/jim-mechanicguide#configremoveducttape)
+	44. [Config.Jobroles](https://github.com/jimathy/jim-mechanicguide#configjobroles)
+8. [Locations.lua](https://github.com/jimathy/jim-mechanicguide#locationslua)
+	1. [Snippet](https://github.com/jimathy/jim-mechanicguide#explanation-of-the-locations-and-how-to-make-one)
+	2. [PolyZone Help](https://github.com/jimathy/jim-mechanicguide#creating-a-new-polyzone-location)
+9. []
 
 ------------------
 ## Performance Items
@@ -24,17 +70,27 @@ Read this before opening a ticket.
 	- If it can, you will begin adding it to the vehicle.
 - If you have an upgraded part already in the vehicle, adding a different level item will remove the previous upgrade from the car and place it in your inventory.
 - The mechanic's `toolbox` item is used to remove these upgrades and set them back to stock.
-- The items classed as costmetic items include:
+- The items classed as performance items include:
 ```
-	- car_armor
-	- brakes1, brakes2, brakes2
-	- engine1, engine2, engine3, engine4
-	- suspension1, suspension2, suspension3, suspension4
-	- transmission1, transmission2, transmission3
-	- drifttires
-	- bprooftires
-	- turbo
-	- headlights
+- car_armor
+- brakes1
+- brakes2
+- brakes3
+- engine1
+- engine2
+- engine3
+- engine4
+- suspension1
+- suspension2
+- suspension3
+- suspension4
+- transmission1
+- transmission2
+- transmission3
+- drifttires
+- bprooftires
+- turbo
+- headlights
 ```
 ------------------
 ## Cosmetic Items
@@ -44,37 +100,37 @@ Read this before opening a ticket.
 - To reset back to default, use another of the same item, as you are putting the "stock" on
 - The items classed as costmetic items include:
 ```
-	- bumper
-	- exhaust
-	- externals
-	- hood
-	- horn
-	- internals
-	- livery
-	- paintcan
-	- customplate
-	- rims
-	- roof
-	- rollcage
-	- seat
-	- skirts
-	- spoiler
-	- tires
-	- tint_supplies
+- bumper
+- exhaust
+- externals
+- hood
+- horn
+- internals
+- livery
+- paintcan
+- customplate
+- rims
+- roof
+- rollcage
+- seat
+- skirts
+- spoiler
+- tires
+- tint_supplies
 ```
 
 ------------------
-## Mechanic  Items
+## Mechanic Items
 
 - This is the list of rest of the items that come with this script
 ```
-	- toolbox - This is the scripts main way to control the performance modifications in a car.
-	- mechanic_tools - This is the script's main repair tools
-	- nos - My scripts Nitrous Canister
-	- noscan - Empty Nitrous Canister
-	- ducttape - A configurable repair item
-	- mechboard - Given as a list of changes when completing a preview of the vehicle
-	- underglow_controller - Controls underglow style and colour + xenon headlight colours
+- toolbox - This is the scripts main way to control the performance modifications in a car.
+- mechanic_tools - This is the script's main repair tools
+- nos - My scripts Nitrous Canister
+- noscan - Empty Nitrous Canister
+- ducttape - A configurable repair item
+- mechboard - Given as a list of changes when completing a preview of the vehicle
+- underglow_controller - Controls underglow style and colour + xenon headlight colours
 ```
 
 ------------------
@@ -116,7 +172,7 @@ Read this before opening a ticket.
 - NOS can be installed on almost any vehicle
 	- If it allows you to install `Turbo` you can install NOS
 
-### NOS Config Options
+#### NOS Config Options
 - `NitrousBoost` - Controls how much power is given to the vehicle
 	- Default - "55.0"
 	- This seems to be a fair number but people have said that in their servers it too powerful and needs to be lowered
@@ -296,7 +352,7 @@ There is little snippets of information on each line for these, but this is a mo
 - The default colour is `16753920` - this is a "decimal" colour number, which is a yellow colour.
 
 
-### Config.Repair*:
+### Repair requirements
 - These are the repair costs and materials that are needed
 - Each one has to have **1** set item
 - The cost for each is a MAX amount, eg. 100% damage would be this number, 50% would be half this number.
@@ -409,26 +465,41 @@ There is little snippets of information on each line for these, but this is a mo
 	},
 ```
 - Explanation of each part of the location snippet
-	- `job` - The job that will work in this building
-	- `zones` - This is a batch of vector2 locations (usually corners of a building) to create a polyzone
-	- `stash` - Where the job stashes will be accessible
+	- `job`
+		- The job that will work in this building
+	- `zones`
+		- This is a batch of vector2 locations (usually corners of a building) to create a polyzone
+	- `stash`
+		- Where the job stashes will be accessible
+		- Only appears if `Config.stashCraft` or `Config.stashRepair` are `true`
 	- `store` - Where the job lock stores will be accessible
-	- `crafting` - Where the crafting stations will be accessible
-	- `clockin` - Where the player can go on duty
-	- `nosrefill` - Where the non-mechanic nos refill station will be
+		- These stores are set in the recipes.lua
+		- By default the items are priced at $0 (free)
+	- `crafting`
+		- Where the crafting stations will be accessible
+	- `clockin`
+		- Where the player can go on duty
+	- `nosrefill`
+		- Where the non-mechanic nos refill station will be
 	- `garage` - The "job garage" system that spawns a fresh temporary car
 		- `spawn` - The vector4 location and direction where the spawned vehicle will appear
 		- `out` - The vector4 location and direction of the "parking meter" prop used to access the spawn menu
 		- `list` - The list of vehicle spawn codes that will appear in the garage's menu
-	- `payments` - Location, heading, and job's logo used for access payment scripts (default: [jim-payments](https://github.com/jimathy/jim-payments))
-	- `blip` - Where the map maker of the building will appear
-	- `bliplabel` - The name of the job/building that will appear on the map
-	- `blipcolor` - The colour id of the map marker
-	- `discordlink` - The webhook of the channel where this locations `/preview` reports are sent
+	- `payments`
+		- Location, heading, and job's logo used for access payment scripts (default: [jim-payments](https://github.com/jimathy/jim-payments))
+	- `blip`
+		- Where the map maker of the building will appear
+	- `bliplabel`
+		- The name of the job/building that will appear on the map
+	- `blipcolor`
+		- The colour id of the map marker
+	- `discordlink`
+		- The webhook of the channel where this locations `/preview` reports are sent
 		- This can be set per location, all you need to do is grab a webhook from a discord channel and then paste it here
 		- This can be used in any discord, for example a players job discord's channel
 		- If the locations link isn't set or left as `""` it will use the link set at `Config.DiscordDefault` instead, if available
-	- `discordcolour` - This is the colour of the post for the discord channel, this is a "decimal" colour number
+	- `discordcolour`
+		- This is the colour of the post for the discord channel, this is a "decimal" colour number
 
 ### Creating a new polyzone location:
 - This is simple guide for making new locations
