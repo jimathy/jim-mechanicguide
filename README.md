@@ -61,7 +61,16 @@ Read this before opening a ticket.
 10. [Locations.lua](https://github.com/jimathy/jim-mechanicguide#locationslua)
 	1. [Snippet](https://github.com/jimathy/jim-mechanicguide#explanation-of-the-locations-and-how-to-make-one)
 	2. [PolyZone Help](https://github.com/jimathy/jim-mechanicguide#creating-a-new-polyzone-location)
-11. [Installation Notes]()
+11. [Installation Notes](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#installation-notes)
+	1. [server.cfg](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#add-the-script-to-the-server-resources)
+	2. [Item List](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#item-installation)
+	3. [Dependancies](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#dependancies)
+	4. [Mechboard](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#mechboard-item)
+	5. [Update Core Events](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#updating-core-events)
+	6. [QB-MechanicJob](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#qb-mechanicjob)
+	7. [QB-MechanicJob Optimization](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#qb-mechanicjob-optimization)
+
+
 ------------------
 ## Performance Items
 
