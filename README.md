@@ -58,6 +58,9 @@ Read this before opening a ticket.
 		6. [Config.DuctAmountBody](https://github.com/jimathy/jim-mechanicguide#configductamountbody)
 		7. [Config.RemoveDuctTape](https://github.com/jimathy/jim-mechanicguide#configremoveducttape)
 	44. [Config.Jobroles](https://github.com/jimathy/jim-mechanicguide#configjobroles)
+	45. [Config.nosBarColour](https://github.com/jimathy/jim-mechanicguide#confignosbarcolour)
+	46. [Config.nosBarFull](https://github.com/jimathy/jim-mechanicguide#confignosbarfull)
+	47. [Config.nosBarEmpty](https://github.com/jimathy/jim-mechanicguide#confignosbarempty)
 10. [Locations.lua](https://github.com/jimathy/jim-mechanicguide#locationslua)
 	1. [Snippet](https://github.com/jimathy/jim-mechanicguide#explanation-of-the-locations-and-how-to-make-one)
 	2. [PolyZone Help](https://github.com/jimathy/jim-mechanicguide#creating-a-new-polyzone-location)
@@ -481,6 +484,20 @@ There is little snippets of information on each line for these, but this is a mo
 - These are the job roles that you want to be able to use the items in this script
 - Example layout for multiple job roles: `JobRoles = { "mechanic", "tuner" }`
 - The defualt setting is = `{ "mechanic" }`
+
+### Config.nosBarColour
+- When set to true it will create a "progressbar" for a value in colour
+	- <span style='color:green'>▓</span><span style='color:yellow'>▓</span><span style='color:red'>▓</span><span style='color:grey'>░</span>
+- when set to false it will leave the bars as white and grey
+	- <span style='color:white'>▓</span><span style='color:grey'>░</span>
+
+### Config.nosBarFull
+- This is the symbol used to indicate a full segment in the bar
+	- Default = `▓`
+
+### Config.nosBarEmpty
+- This is the symbol used to indicate an empty segment in the bar
+	- Default = `░`
 
 ------------------
 ## Locations.lua
