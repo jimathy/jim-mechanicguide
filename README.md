@@ -72,25 +72,25 @@ Read this before opening a ticket.
 - The mechanic's `toolbox` item is used to remove these upgrades and set them back to stock.
 - The items classed as performance items include:
 ```
-- car_armor
-- brakes1
-- brakes2
-- brakes3
-- engine1
-- engine2
-- engine3
-- engine4
-- suspension1
-- suspension2
-- suspension3
-- suspension4
-- transmission1
-- transmission2
-- transmission3
-- drifttires
-- bprooftires
-- turbo
-- headlights
+- car_armor - "Vehicle Armor"
+- brakes1 - "Performance Brakes"
+- brakes2 - "GT Big Brakes"
+- brakes3 - "Competition Brakes"
+- engine1 - "Shonen Engine"
+- engine2 - "V8 Engine"
+- engine3 - "V10 Engine"
+- engine4 - "V12 Engine"
+- suspension1 - "Lowered Suspension"
+- suspension2 - "Street Suspension"
+- suspension3 - "Racing Suspension"
+- suspension4 - "Rally Suspension"
+- transmission1 - "Transmission Lvl 1"
+- transmission2 - "Transmission Lvl 2"
+- transmission3 - "Transmission Lvl 3"
+- drifttires - "Drift Tires"
+- bprooftires - "Bulletproof Tires"
+- turbo - "Supercharger Turbo"
+- headlights - "Xenon Headlights"
 ```
 ------------------
 ## Cosmetic Items
@@ -100,23 +100,23 @@ Read this before opening a ticket.
 - To reset back to default, use another of the same item, as you are putting the "stock" on
 - The items classed as costmetic items include:
 ```
-- bumper
-- exhaust
-- externals
-- hood
-- horn
-- internals
-- livery
-- paintcan
-- customplate
-- rims
-- roof
-- rollcage
-- seat
-- skirts
-- spoiler
-- tires
-- tint_supplies
+- bumper - "Vehicle Bumper"
+- exhaust - "Vehicle Exhaust"
+- externals - "Exterior Cosmetics"
+- hood - "Vehicle Hood"
+- horn - "Custom Vehicle Horn"
+- internals - "Internal Cosmetics"
+- livery - "Livery Roll"
+- paintcan - "Vehicle Spray Can"
+- customplate - "Customized Plates"
+- rims - "Custom Wheel Rims"
+- roof - "Vehicle Roof"
+- rollcage - "Roll Cage"
+- seat - "Seat Cosmetics"
+- skirts - "Vehicle Skirts"
+- spoiler - "Vehicle Spoiler"
+- tires - "Drift Smoke Tires"
+- tint_supplies - "Tint Supplies"
 ```
 
 ------------------
@@ -124,13 +124,13 @@ Read this before opening a ticket.
 
 - This is the list of rest of the items that come with this script
 ```
-- toolbox - This is the scripts main way to control the performance modifications in a car.
-- mechanic_tools - This is the script's main repair tools
-- nos - My scripts Nitrous Canister
-- noscan - Empty Nitrous Canister
-- ducttape - A configurable repair item
-- mechboard - Given as a list of changes when completing a preview of the vehicle
-- underglow_controller - Controls underglow style and colour + xenon headlight colours
+- toolbox - "Toolbox" - This is the scripts main way to control the performance modifications in a car.
+- mechanic_tools - "Mechanic tools" - This is the script's main repair tools
+- nos - "NOS Bottle" - My scripts Nitrous Canister
+- noscan - "Empty NOS Bottle" - Empty Nitrous Canister
+- ducttape - "Duct Tape" - A configurable repair item
+- mechboard - "Mechanic Sheet" - Given as a list of changes when completing a preview of the vehicle
+- underglow_controller - "Neon Controller"-  Controls underglow style and colour + xenon headlight colours
 ```
 
 ------------------
@@ -189,7 +189,52 @@ Read this before opening a ticket.
 - `useQBLock` - A toggle added to allow use of `qb-lock` instead of `qb-skillbar` for install NOS
 
 ------------------
-## Configuration - Config.lua
+## manualrepair.lua / Non-Mechanic repair benches
+
+- This file creates repair benches that can **ONLY** be used when there isn't any mechanics on duty.
+- The benches are added to set locations at the top of this file
+- They are activated by targetting with `qb-target` while in a car
+- How the config.lua options are set will determine how the menu functions
+	- `Config.ManualRepairCost` - This is the **SET** amount a vehicle repair will cost
+	- `Config.ManualRepairBased` - when `true` this overrides the above and grabs the value of the vehicle from vehicles.lua
+	- `Config.ManualRepairPercent` - The percentage of the vehicle value to be used. Default is `5`
+	- `Config.repairEngine` - `true` repair engine + body, `false` repair body only
+	- `Config.repairExtras` - `true` will attempt to repair extra damages from `qb-mechanicjob`
+	- `Config.dutyMessage` - The excuse for why people can't repair while mechanics are on duty.
+	- `Config.repairAnimate` - Animates the repair, better than a progress bar
+	- `Config.repairSpeed` - How fast each repair step takes
+- NOTE: People have reported this file causing issues with removing other qb-target locations in other files
+	- I have no idea how or why.
+	- Removing this file seems to fix it.
+
+------------------
+## police.lua / Emergency Repair Benches
+
+- This file creates repair/customisation benches for police
+	- These are intended to be for Police/EMS players, but other job roles can be added easily
+- It adds a bench to the set locations where they can repair and change a handful of cosmetics/extras.
+- This is activated by using third eye/qb-target
+- Note: I have been asked several times to add more options to this
+	- There are so many different custom police cars that use a random modification to change a small thing on the vehicle.
+	- At that point if I added more/all options it would just be another version of `qb-customs`
+
+------------------
+## preview.lua - `/preview`
+
+- The preview system is shown by typing `/preview`
+	- This system locks the vehicle in place
+	- Shows a menu with all possible cosmetic changes for the current vehicle
+	- You can close the menu to move the camera around
+	- Typing `/preview` opens it again allowing you to continue
+	- When complete, exit the vehicle and the preview will be classed as finished
+- When exiting the vehicle, depending on the set config options you will recieve a list of the changes made
+	- `Config.DiscordPreview` will attempt to print the list to a specified discord channel
+	- `Config.PreviewPhone = true` will attempt to use the set phone system to send the player a phone email with the list
+	- `Config.PreviewPhone = false` will spawn a item `mechboard` which when used will show the list of changes on screen
+- Note: Spawning the `mechboard` item, trying to use it and then asking me why it's telling you not to spawn it shows you haven't read this-
+
+-----------------
+## Configuration - config.lua
 
 There is little snippets of information on each line for these, but this is a more detailed list of information
 
@@ -280,6 +325,7 @@ There is little snippets of information on each line for these, but this is a mo
 
 ### Config.ShowOdo
 - Enabling this will by default show the on-screen Odometer(Miles/Kilometers) when driving in an owned vehicle.
+- Players can toggle on and off theirselves easily with the command `/showodo`
 
 ### Config.OdoLocation
 - This determines where the location of the Odometer will be for your players
@@ -441,65 +487,65 @@ There is little snippets of information on each line for these, but this is a mo
 
 ### Explanation of the locations and how to make one
 ```lua
-	{	job = "mechanic",
-		zones = {
-			vector2(154.69816589355, -3007.0153808594),
-			vector2(120.64015197754, -3006.7275390625),
-			vector2(120.48593902588, -3051.8874511719),
-			vector2(154.61296081543, -3051.5419921875)
-		},
-		stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
-		store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
-		crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
-		clockin = { { coords = vector3(145.29, -3012.93, 6.94), heading = 86.0, }, },
-		nosrefill = { { coords = vector4(121.17, -3044.73, 7.04, 268.96) } },
-		garage = { spawn = vector4(163.22, -3009.31, 5.27, 89.72),
-					out = vector4(157.37, -3016.57, 7.04, 179.58),
-					list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
-		payments = { coords = vector3(146.44, -3014.09, 6.94), heading = 195.0, img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png width=150px></p>" },
-		blip = vector3(139.91, -3023.83, 7.04),
-		bliplabel = "LS Tuner Shop",
-		blipcolor = 81,
-		discordlink = "",
-		discordcolour = 2571775,
+{	job = "mechanic",
+	zones = {
+		vector2(154.69816589355, -3007.0153808594),
+		vector2(120.64015197754, -3006.7275390625),
+		vector2(120.48593902588, -3051.8874511719),
+		vector2(154.61296081543, -3051.5419921875)
 	},
+	stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
+	store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
+	crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
+	clockin = { { coords = vector3(145.29, -3012.93, 6.94), heading = 86.0, }, },
+	nosrefill = { { coords = vector4(121.17, -3044.73, 7.04, 268.96) } },
+	garage = { spawn = vector4(163.22, -3009.31, 5.27, 89.72),
+				out = vector4(157.37, -3016.57, 7.04, 179.58),
+				list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
+	payments = { coords = vector3(146.44, -3014.09, 6.94), heading = 195.0, img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png width=150px></p>" },
+	blip = vector3(139.91, -3023.83, 7.04),
+	bliplabel = "LS Tuner Shop",
+	blipcolor = 81,
+	discordlink = "",
+	discordcolour = 2571775,
+},
 ```
-- Explanation of each part of the location snippet
-	- `job`
-		- The job that will work in this building
-	- `zones`
-		- This is a batch of vector2 locations (usually corners of a building) to create a polyzone
-	- `stash`
-		- Where the job stashes will be accessible
-		- Only appears if `Config.stashCraft` or `Config.stashRepair` are `true`
-	- `store` - Where the job lock stores will be accessible
-		- These stores are set in the recipes.lua
-		- By default the items are priced at $0 (free)
-	- `crafting`
-		- Where the crafting stations will be accessible
-	- `clockin`
-		- Where the player can go on duty
-	- `nosrefill`
-		- Where the non-mechanic nos refill station will be
-	- `garage` - The "job garage" system that spawns a fresh temporary car
-		- `spawn` - The vector4 location and direction where the spawned vehicle will appear
-		- `out` - The vector4 location and direction of the "parking meter" prop used to access the spawn menu
-		- `list` - The list of vehicle spawn codes that will appear in the garage's menu
-	- `payments`
-		- Location, heading, and job's logo used for access payment scripts (default: [jim-payments](https://github.com/jimathy/jim-payments))
-	- `blip`
-		- Where the map maker of the building will appear
-	- `bliplabel`
-		- The name of the job/building that will appear on the map
-	- `blipcolor`
-		- The colour id of the map marker
-	- `discordlink`
-		- The webhook of the channel where this locations `/preview` reports are sent
-		- This can be set per location, all you need to do is grab a webhook from a discord channel and then paste it here
-		- This can be used in any discord, for example a players job discord's channel
-		- If the locations link isn't set or left as `""` it will use the link set at `Config.DiscordDefault` instead, if available
-	- `discordcolour`
-		- This is the colour of the post for the discord channel, this is a "decimal" colour number
+### Explanation of each part of the location snippet
+- `job`
+	- The job that will work in this building
+- `zones`
+	- This is a batch of vector2 locations (usually corners of a building) to create a polyzone
+- `stash`
+	- Where the job stashes will be accessible
+	- Only appears if `Config.stashCraft` or `Config.stashRepair` are `true`
+- `store` - Where the job lock stores will be accessible
+	- These stores are set in the recipes.lua
+	- By default the items are priced at $0 (free)
+- `crafting`
+	- Where the crafting stations will be accessible
+- `clockin`
+	- Where the player can go on duty
+- `nosrefill`
+	- Where the non-mechanic nos refill station will be
+- `garage` - The "job garage" system that spawns a fresh temporary car
+	- `spawn` - The vector4 location and direction where the spawned vehicle will appear
+	- `out` - The vector4 location and direction of the "parking meter" prop used to access the spawn menu
+	- `list` - The list of vehicle spawn codes that will appear in the garage's menu
+- `payments`
+	- Location, heading, and job's logo used for access payment scripts (default: [jim-payments](https://github.com/jimathy/jim-payments))
+- `blip`
+	- Where the map maker of the building will appear
+- `bliplabel`
+	- The name of the job/building that will appear on the map
+- `blipcolor`
+	- The colour id of the map marker
+- `discordlink`
+	- The webhook of the channel where this locations `/preview` reports are sent
+	- This can be set per location, all you need to do is grab a webhook from a discord channel and then paste it here
+	- This can be used in any discord, for example a players job discord's channel
+	- If the locations link isn't set or left as `""` it will use the link set at `Config.DiscordDefault` instead, if available
+- `discordcolour`
+	- This is the colour of the post for the discord channel, this is a "decimal" colour number
 
 ### Creating a new polyzone location:
 - This is simple guide for making new locations
@@ -521,37 +567,3 @@ There is little snippets of information on each line for these, but this is a mo
 		- Holding `Ctrl` while doing any of this will make it move slower for precise handling
 		- Type `/pzfinish` to finsh creating the box and save the information to a file
 		- The file is located in your server folder next to your `server.cfg`
-
--- Police.lua --
-
-This is intended to be for police/ambulance players
-It adds a bench to the set locations where they can repair and change a few cosmetics/extras.
-This is opened by using third eye/qb-target
-You can add other roles to use this but it's not recommended.
-
----
-
--- QuickRepair.lua --
-
-This is all about the ducttape item
-ALOT of the settings for this are highly customisable and in the config.lua
-
----
-
--- Preview.lua --
-
-The preview system is shown by typing /preview
-
-This shows a menu with all possible cosmetic changes for the current vehicle
-This will attempt to disable the engine so you can't change then drive away with the changes.
-
-You are able to close the menu when picking cosmetics as it will only "finish" when you leave the drivers seat
-
-Depending on the settings you have chosen in the Config.Lua you will either receive an item or and email with the list of changes
-
-I recommend emails if you are only allowing mechanics to do the previews,
-
-The item can either be mechanic only
-or customers only and then passed to the mechanics.
-
-I'm not sure how other phone systems work but the email side of this is made for qb-phone but may be able to be adapted to other phones
