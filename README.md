@@ -8,8 +8,8 @@ Read this before opening a ticket.
 3. [Mechanic Items](https://github.com/jimathy/jim-mechanicguide#mechanic-items)
 4. [Toolbox](https://github.com/jimathy/jim-mechanicguide#toolbox--check_tuneslua)
 5. [Mechanic_Tools](https://github.com/jimathy/jim-mechanicguide#mechanic_tools--repairlua)
-6. [manualrepair.lua](https://github.com/jimathy/jim-mechanicguide#manualrepairlua--non-mechanic-repair-benches)
-7. [police.lua](https://github.com/jimathy/jim-mechanicguide#policelua--emergency-repair-benches)
+6. [manualrepair.lua](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#manualrepairlua--non-mechanic-repair-benches)
+7. [police.lua](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#policelua--emergency-repair-benches)
 8. [Nitrous](https://github.com/jimathy/jim-mechanicguide#nitrous--noslua)
 	1. [Nos.lua Config](https://github.com/jimathy/jim-mechanicguide#nos-config-options)
 9. [/preview](https://github.com/jimathy/jim-mechanicguide#previewlua---preview)
@@ -65,14 +65,18 @@ Read this before opening a ticket.
 11. [Locations.lua](https://github.com/jimathy/jim-mechanicguide#locationslua)
 	1. [Snippet](https://github.com/jimathy/jim-mechanicguide#explanation-of-the-locations-and-how-to-make-one)
 	2. [PolyZone Help](https://github.com/jimathy/jim-mechanicguide#creating-a-new-polyzone-location)
-12. [Installation Notes](https://github.com/jimathy/jim-mechanicguide#installation-notes)
-	1. [server.cfg](https://github.com/jimathy/jim-mechanicguide#add-the-script-to-the-server-resources)
-	2. [Item List](https://github.com/jimathy/jim-mechanicguide#item-installation)
-	3. [Dependancies](https://github.com/jimathy/jim-mechanicguide#dependancies)
-	4. [Mechboard](https://github.com/jimathy/jim-mechanicguided#mechboard-item)
-	5. [Update Core Events](https://github.com/jimathy/jim-mechanicguide#updating-core-events)
-	6. [QB-MechanicJob](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob)
-	7. [QB-MechanicJob Optimization](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob-optimization)
+12. [recpies.lua](https://github.com/jimathy/jim-mechanicguide#recipeslua)
+	1. [Crafting](https://github.com/jimathy/jim-mechanicguide#crafting)
+	2. [Stores](https://github.com/jimathy/jim-mechanicguide#stores)
+13. [Installation Notes](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#installation-notes)
+	1. [server.cfg](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#add-the-script-to-the-server-resources)
+	2. [Item List](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#item-installation)
+	3. [Dependancies](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#dependancies)
+	4. [Mechboard](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#mechboard-item)
+	5. [Update Core Events](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#updating-core-events)
+	6. [QB-MechanicJob](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#qb-mechanicjob)
+	7. [QB-MechanicJob Optimization](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#qb-mechanicjob-optimization)
+	8. [Blue Nos Flames](https://github.com/jimathy/jim-mechanicguide/blob/main/README.md#blue-nos-flames--nopixel-style)
 
 ------------------
 ## Performance Items
@@ -161,13 +165,15 @@ Read this before opening a ticket.
 ------------------
 ## Mechanic_Tools / repair.lua
 
-- This menu is  activated by the item "mechanic_tools"
+- This menu is activated by the item "mechanic_tools"
 - Note: It tires to get all the information BEFORE the progressbars so if you don't get any animations, theres an error.
 - It will start with an animated check of the engine and body for damage and then get a list what it found.
 - How this menu fucntions is defined by the config options
 	- `FreeRepair = true` will allow you to repair the car with no requirements
 	- `StashRepair = true` will place a stash location for the mechanics to place their materials so they can be pulled from there and used when repairing
 	- The locations for these mechanic stashes are set at the top of the file, the default is set to Gabz Tuners.
+- When `qb-mechanicjob` is detected, it automatically attempts to load extra damages from this script
+	- If you don't use it, only Engine and Body will be available to repair
 
 ------------------
 ## Nitrous / nos.lua
@@ -596,6 +602,51 @@ There is little snippets of information on each line for these, but this is a mo
 		- The file is located in your server folder next to your `server.cfg`
 
 ------------------
+## recipes.lua
+
+## Crafting
+- Crafting can be enabled/disabled in `config.lua` with the setting `Config.Crafting`
+- Crafting is accessed through locations created by `locations.lua`
+- The menu's are shared between all jobs/locations but you can lock items to specific jobs and grades
+- And example of a recipe snippet
+```lua
+--This example is purely an example
+{ 	['cleaningkit'] = {		--The item that will be crafted
+		['rubber'] = 1,
+		["engine2"] = 1,	--An ingredient and the amount needed
+		['plastic'] = 1,
+	},
+	["amount"] = 2,		-- The amount that of the crafted item you will recieve
+	["job"] = {			-- Support for hiding items only to certain jobs (multiple possible)
+		["mechanic"] = 4,	-- Job: "mechanic" and Grade "4" only and above can see this recipe
+		["tuner"] = 4,	-- Job: "tuner" and Grade "4" only and above can see this recipe
+	}
+},
+```
+- Where the ingredients come from depends on the `config.lua` settings
+	- `StashCraft = true` would demand the ingredients come from the current job roles stash
+	- `StashCraft = false` would instead check the players inventory for the ingredient items
+
+## Stores
+- Stores can be enabled/disabled in `config.lua` with the setting `Config.Stores`
+- There are built in job stores that allow quick access of items
+	- By default the items are free, but you can change this easily
+- Example of a store snippet entry:
+```lua
+{
+	name = "mechanic_tools", -- Item's spawn code
+	price = 0,	-- Cost of the item
+	amount = 10,	-- How many are available to buy
+	info = {},	-- Usually blank, none of my items use this
+	type = "item", -- Usually left as "item"
+	requiredJob = { 	-- Job lock for items (THIS ONLY WORKS WITH JIM-SHOPS)
+		["mechanic"] = 1,	-- Mechanic grade 1 and higher can see/buy this item
+		["tuner"] = 1, 	-- Tuner grade 1 and higher can see/buy this item
+	}
+},
+```
+
+------------------
 ## Installation Notes
 
 ### Add the script to the server resources
@@ -1010,7 +1061,7 @@ local function DamageRandomComponent()
 end
 ```
 ## QB-MechanicJob Optimization
-- Recently discovered that `qb-mechanicjob` by default has a seemingly currently unnecessary database change, every 2 seconds of driving a vehicle.
+- I recently realised that `qb-mechanicjob` by default has a seemingly currently unnecessary database change, every 2 seconds of driving a vehicle.
 	- Some servers have over 100 people in. If all players are in cars at the same time that would be 100 database changes every 2 seconds.
 - Long explanation is that the distance travelled is set to `0` on script/server starts
 	- As you drive your car it updates the distance travelled.
@@ -1029,3 +1080,11 @@ if result[1] ~= nil then
 end
 ```
 - It will work exactly the same way but no extra database lag
+
+## Blue Nos Flames / Nopixel Style
+- [Download the FiveM version of this file](https://www.gta5-mods.com/misc/purple-blue-flames-replace-sp-fivem)
+- UnZip the file
+- Copy the `stream` folder into the `jim-mechanic` folder (next to the fxmanifest.lua)
+- Set `OldFlame = true` in nos.lua
+	- this also changes the default "backfire" effect in my script too, but OldFlame is more visible
+- Restart the script. Done.
