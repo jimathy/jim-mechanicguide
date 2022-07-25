@@ -72,7 +72,7 @@ Read this before opening a ticket.
 	1. [server.cfg](https://github.com/jimathy/jim-mechanicguide#add-the-script-to-the-server-resources)
 	2. [Item List](https://github.com/jimathy/jim-mechanicguide#item-installation)
 	3. [Dependancies](https://github.com/jimathy/jim-mechanicguide#dependancies)
-	4. [Mechboard](https://github.com/jimathy/jim-mechanicguided#mechboard-item)
+	4. [Mechboard](https://github.com/jimathy/jim-mechanicguide#mechboard-item)
 	5. [Update Core Events](https://github.com/jimathy/jim-mechanicguide#updating-core-events)
 	6. [QB-MechanicJob](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob)
 	7. [QB-MechanicJob Optimization](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob-optimization)
