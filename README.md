@@ -178,35 +178,34 @@ Read this before opening a ticket.
 ------------------
 ## Nitrous / nos.lua
 
-- Nitrous relies on two columns in the database `player_vehicles`
+- Nitrous relies on three columns in the database `player_vehicles`
 	- `hasnitro` - Wether the vehicle has Nitrous in or not
 	- `noslevel` - The amount of nos that is in the vehicle (max 100)
+	- `noscolour` - The RGB colours of the NOS Purge
 - A vehicle's NOS is saved between server restarts for player owned vehicles
 - To add NOS to a vehicle you will first need `Turbo` to be installed on the vehicle.
-	- Then you will need a NOS cannister(nos) and to use it outside of the vehicle. This will start a skill check to install it.
-- To use the NOS boost inside the vehicle, use the `Left Shift` button.
-	- This will activate the nitrous purge if you are travelling under a certain speed.
+	- Then you will need a NOS cannister (`nos`) and to use it outside of the vehicle. This will start a skill check to install it.
+- The NOS consists of two modes, these can be switched with `Left Ctrl`
+	- Boost Mode
+	- Purge Mode
+- When in Boost Mode you can control the power with `Page Down` or `Page Up` and is activated with `Left Shift`
+	- Level 1 - Standard NOS Boost
+	- Level 2 - Increased acceleration + Boost
+	- Level 3 - Greater acceleration + Boost
+	- Boosting for too long will damage the engine and the greater the boost level the more damage that will be done
+- When in Purge Mode, you will be able to activate purge spray's from your vehicle
+	- `Page Down` or `Page Up` in this mode controls the the of spray (purely cosmetic)
+	- Purging after boosting speeds up the cooldown and allows you to boost again sooner
 - When the NOS is used up in a vehicle, the driver will receive an empty nos can, which can be refilled/crafted to make it full again.
 - If you put in a new can before you run out of NOS in the vehicle you will also recieve an empty can.
 - NOS can be installed on almost any vehicle
 	- If it allows you to install `Turbo` you can install NOS
-
-#### NOS Config Options
-- `NitrousBoost` - Controls how much power is given to the vehicle
-	- Default - "55.0"
-	- This seems to be a fair number but people have said that in their servers it too powerful and needs to be lowered
-- `NitrousUseRate` - This is how fast the nitrous drains
-	- Default - "0.5"
-	- This seems to be a good number, 0.1 is really slow, 1.0 would be too fast
-- `NitrousCoolDown` - This is how long a player has to wait before the boost works again
-	- Default - "7000"
-	- 7 seconds seems to be enough time for it to cooldown, setting this too low allows some servers players to travel at insane speeds after spamming the button
-- `OldFlame` - This sets the boost's flame effect back to qb-tunerchip style
-- `tyreSync` - Passing idea never completely finished, this sets the NOS Purge effects colours to the same as the vehicles tiresmoke
-- `EnableTrails` - This enables the headlight trails while boosting
-- `EnableScreen` - This enables the screen effects while boosting
-- `useQBLock` - A toggle added to allow use of `qb-lock` instead of `qb-skillbar` for install NOS
-
+- The `manualPurgeLoc` table at the bottom of the file is the Manually placed Purge locations on vehicles
+	- Currently I added Super cars beacuse their default placement was all over the place
+	- Feel free to edit/add any and share these with others.
+```
+{ xOffset, yOffset, zOffset, xRotation, yRotation, zRotation },
+```
 ------------------
 ## manualrepair.lua / Non-Mechanic repair benches
 
@@ -365,6 +364,10 @@ There is little snippets of information on each line for these, but this is a mo
 - The default is `5000` but I recommend setting this to a high amount for your server
 - The intention of the mechanic script is to provide RP to the server, there is no RP in using a prop instead of talking to someone.
 
+### Config.ManualRepairCostBased
+- Set this to true if you want the cost to ALWAYS be the amount set at "ManualRepairCost"
+- Set this to false if you want it to "ManualRepairCost" to be the max and cost is calculated by damage
+
 ### Config.ManualRepairBased
 - This overrides the previous setting `ManualRepairCost`
 - Setting this to true sets the price of the repair to be based on the cost of the vehicle in your vehicles.lua
@@ -396,11 +399,63 @@ There is little snippets of information on each line for these, but this is a mo
 - The time between each task while using repairAnimate. `1500` Seems to be a reasonable time for each one
 
 ### Config.NosRefillCharge
-- This only is used at Nos Refill stations, if you have added them to your locations in locations.lua
+- This only is used at NOS Refill stations, if you have added them to your locations in locations.lua
 - The amount in dollars required for a player to refill an Empty NOS can.
 - Note: There is also the option of a mechanic crafting them for you.
 - The default is `1000`
 
+### Config.NosTopSpeed = 55.0,
+- Controls the top speed "multiplier" when boosting
+- Functions a bit weirdly - 55.0 isn't 55 times normal speed, but seems a good boost value
+- Default - `55.0`
+- This seems to be a fair number but people have said that in their servers this number is too powerful and needed to be lowered
+- Removing this config option or setting this to `-1.0` disables it and leaves the accelleration boost on.
+
+### Config.NitrousUseRate
+- This is how fast the nitrous drains
+- Default - `0.4`
+- Boost Level 1 changes this number minus half of this number (0.4 - (0.4 / 2))
+- Boost Level 3 changes this number plus half of this number (0.4 + (0.4 / 2))
+
+### Config.NitrousCoolDown
+- This is how long a player has to wait before the boost works again
+- Default - `7000`
+- 7 seconds seems to be enough time for it to cooldown, setting this too low allows some servers players to travel at insane speeds after spamming the button
+- Set to `0` to disable this
+
+### Config.CooldownConfirm
+- Simply, this will play a confirmation beep when cooldown is complete
+- Made is toggleable in the config in case people didn't like it
+
+### Config.nosDamage
+- This enables NOS causing damage to engine while boosting
+- Boosting for too long will play sound alerts and damage the Engine.
+
+### Config.boostExplode
+- If boosting too long at Boost Level 3 the NOS tank will explode.
+- Will cause damage to the vehicle and cause a fire.
+- This will remove remaining NOS from the vehicle and not give an empty tank
+
+### Config.EnableFlame
+- `true` adds exhaut flame effects while boosting
+### Config.EnableTrails
+- `true` adds taillight effects while boosting
+### Config.EnableScreen
+- `true` True adds screen effects while boosting
+
+### Config.skillcheck
+- When adding Nos to a vehicle there are three skillcheck script options available
+	- "qb-skillbar"
+	- "qb-lock"
+	- "ps-ui"
+
+### Config.explosiveFail
+- When `true` there is a `1 in 10` chance for when you fail the skillcheck for the tank to explode in the vehicle.
+- Doesn't cause much damage, but fill push the player and vehicle back
+
+### Config.explosiveFailJob
+- When `false` mecahnics WILL **NOT** cause explosions on failing the skill check
+- When `true` mechanics **CAN** cause explosions on failing the skill check
 
 ### Config.DiscordPreview
 - This enables or disables the Discord Reports for the `/preview` command
@@ -410,7 +465,7 @@ There is little snippets of information on each line for these, but this is a mo
 ### Config.DiscordDefault
 - So people seem to be confused by this one.
 - This is the default channel that will be used, no matter where you are.
-- If you haven't set specific discord channels in a location, it with "default" to this link.
+- If you haven't set specific discord channels in a location, it **should** "default" to this link.
 
 ### Config.DiscordColour
 - You don't need to touch this, but this is the default colour of the post in the discord channel
@@ -671,6 +726,7 @@ There is little snippets of information on each line for these, but this is a mo
 
 	["nos"] 					    = {["name"] = "nos", 			 	  	  	["label"] = "NOS Bottle", 		        ["weight"] = 0, 		["type"] = "item", 		["image"] = "nos.png", 				    ["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = "A full bottle of NOS"},
 	["noscan"] 					    = {["name"] = "noscan", 			 	  	["label"] = "Empty NOS Bottle", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "noscan.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,  ["combinable"] = nil,   ["description"] = "An Empty bottle of NOS"},
+	["noscolour"] 					= {["name"] = "noscolour", 			 	  	["label"] = "NOS Colour Injector", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "noscolour.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,  ["combinable"] = nil,   ["description"] = "Make that purge spray"},
 
 	["engine1"] 				    = {["name"] = "engine1", 			 	  	["label"] = "Shonen Engine",            ["weight"] = 0, 		["type"] = "item", 		["image"] = "shonen.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = ""},
 	["engine2"] 				    = {["name"] = "engine2", 			 	  	["label"] = "V8 Engine",        	    ["weight"] = 0, 		["type"] = "item", 		["image"] = "v8engine.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = ""},
@@ -770,11 +826,11 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
 		local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
 
         if GetIsVehiclePrimaryColourCustom(vehicle) then
-            r, g, b = GetVehicleCustomPrimaryColour(vehicle)
+            local r, g, b = GetVehicleCustomPrimaryColour(vehicle)
             colorPrimary = { r, g, b, colorPrimary }
         end
         if GetIsVehicleSecondaryColourCustom(vehicle) then
-            r, g, b = GetVehicleCustomSecondaryColour(vehicle)
+            local r, g, b = GetVehicleCustomSecondaryColour(vehicle)
             colorSecondary = { r, g, b, colorSecondary }
         end
         local extras = {}
