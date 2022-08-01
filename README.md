@@ -53,6 +53,7 @@ Read this before opening a ticket.
 	- [Config.NosRefillCharge](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
 	- [Config.NosTopSpeed](https://github.com/jimathy/jim-mechanicguide#confignostopspeed)
 	- [Config.NosBoostPower](https://github.com/jimathy/jim-mechanicguide#confignosboostpower)
+	- [Config.NosBindings](https://github.com/jimathy/jim-mechanicguide#confignosbindngs)
 	- [Config.NitrousUseRate](https://github.com/jimathy/jim-mechanicguide#confignitroususerate)
 	- [Config.NitrousCoolDown](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
 	- [Config.CooldownConfirm](https://github.com/jimathy/jim-mechanicguide#configcooldownconfirm)
@@ -443,6 +444,18 @@ NosBoostPower = {
 },
 ```
 - These values seem a good default, but may need adjusting if you have customised vehicle meta files
+
+### Config.NosBindings
+- Simply, this is the location of the NOS keybindings
+- A handful of people reported "36" just didn't work for them, so this is to make it easier to change
+```lua
+NosBindings = {
+	36, -- Switch mode button - Default: 36 "LEFT CTRL"
+	21, -- Activate NOS/Purge - Default: 21 "LEFT SHIFT"
+	10, -- Boost/Purge UP - Default: 10 "PAGE UP"
+	11, -- Boost/Purge Down - Default: 11 "PAGE DOWN"
+},
+```
 
 ### Config.NitrousUseRate
 - This is how fast the nitrous drains
