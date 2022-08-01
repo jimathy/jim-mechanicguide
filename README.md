@@ -53,7 +53,7 @@ Read this before opening a ticket.
 	- [Config.NosRefillCharge](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
 	- [Config.NosTopSpeed](https://github.com/jimathy/jim-mechanicguide#confignostopspeed)
 	- [Config.NosBoostPower](https://github.com/jimathy/jim-mechanicguide#confignosboostpower)
-	- [Config.NosBindings](https://github.com/jimathy/jim-mechanicguide#confignosbindngs)
+	- [Config.NosBindings](https://github.com/jimathy/jim-mechanicguide#confignosbindings)
 	- [Config.NitrousUseRate](https://github.com/jimathy/jim-mechanicguide#confignitroususerate)
 	- [Config.NitrousCoolDown](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
 	- [Config.CooldownConfirm](https://github.com/jimathy/jim-mechanicguide#configcooldownconfirm)
