@@ -1190,3 +1190,12 @@ end
 - Set `OldFlame = true` in nos.lua
 	- this also changes the default "backfire" effect in my script too, but OldFlame is more visible
 - Restart the script. Done.
+
+## Support for CodeM-Hud
+- Had a few people asking about CodeM hud support for NOS
+- I assume their HUD's are similar and this will work for most
+- Simply add this line at the bottom of the HUD scripts nitro.lua
+```lua
+RegisterNetEvent("hud:client:UpdateNitrous", function(hasnitro, level, show) SendNUIMessage({ type="set_status", statustype = "nitro", value = (level or 0)}) end)
+```
+- This will make `jim-mechanic` trigger the HUD's NOS level changes
