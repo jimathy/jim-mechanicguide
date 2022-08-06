@@ -273,6 +273,15 @@ Read this before opening a ticket.
 	- `Config.PreviewPhone = false` will spawn a item `mechboard` which when used will show the list of changes on screen
 - Note: Spawning the `mechboard` item, trying to use it and then asking me why it's telling you not to spawn it shows you haven't read this-
 
+#### To create a discord webhook follow the following steps:
+- Click the gear icon (Edit Channel) of the channel you want to post to.
+- Click Webhooks in the left menu.
+- Click the Create Webhook button.
+- Enter a Name of your choice.
+- Click the Copy button of the Webhook URL.
+- Click the Save button.
+- Paste the Webhook URL in the script you want to use it.
+
 -----------------
 ## Configuration - config.lua
 
