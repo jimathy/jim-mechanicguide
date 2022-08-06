@@ -1196,8 +1196,7 @@ end
 - [Download the FiveM version of this file](https://www.gta5-mods.com/misc/purple-blue-flames-replace-sp-fivem)
 - UnZip the file
 - Copy the `stream` folder into the `jim-mechanic` folder (next to the fxmanifest.lua)
-- Set `OldFlame = true` in nos.lua
-	- this also changes the default "backfire" effect in my script too, but OldFlame is more visible
+- That's it! The effects are show while boosting and the different styles change between boost levels
 - Restart the script. Done.
 
 ## Support for CodeM-Hud
