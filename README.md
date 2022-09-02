@@ -905,6 +905,12 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
 		local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
 
+        if GetVehicleXenonLightsCustomColor(vehicle) == 1 then
+            local _, r, g, b = GetVehicleXenonLightsCustomColor(vehicle)
+            headlightColor = { r, g, b }
+        else
+            headlightColor = GetVehicleHeadlightsColour(vehicle)
+        end
         if GetIsVehiclePrimaryColourCustom(vehicle) then
             local r, g, b = GetVehicleCustomPrimaryColour(vehicle)
             colorPrimary = { r, g, b, colorPrimary }
@@ -926,7 +932,7 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
         local tireBurstState = {}
         local tireBurstCompletely = {}
         for _, id in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
-            tireHealth[id] = GetTyreHealth(vehicle, id, false)
+            tireHealth[id] = GetVehicleWheelHealth(vehicle, id, false)
             tireBurstState[id] = IsVehicleTyreBurst(vehicle, id, false)
             tireBurstCompletely[id] = IsVehicleTyreBurst(vehicle, id, true)
         end
@@ -959,6 +965,7 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
             windowStatus = windowStatus,
             doorStatus = doorStatus,
             xenonColor = GetVehicleXenonLightsColour(vehicle),
+            headlightColor = headlightColor,
             neonEnabled = {
                 IsVehicleNeonLightEnabled(vehicle, 0),
                 IsVehicleNeonLightEnabled(vehicle, 1),
@@ -966,7 +973,6 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
                 IsVehicleNeonLightEnabled(vehicle, 3)
             },
             neonColor = table.pack(GetVehicleNeonLightsColour(vehicle)),
-            headlightColor = GetVehicleHeadlightsColour(vehicle),
             interiorColor = GetVehicleInteriorColour(vehicle),
             extras = extras,
             tyreSmokeColor = table.pack(GetVehicleTyreSmokeColor(vehicle)),
@@ -1061,7 +1067,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
 				colorPrimary = props.color1[4]
 				SetVehicleCustomPrimaryColour(vehicle, props.color1[1], props.color1[2], props.color1[3])
 				SetVehicleColours(vehicle, props.color1[4], colorSecondary)
-           end
+            end
         end
         if props.color2 then
             if type(props.color2) == "number" then
@@ -1069,7 +1075,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
 			else
                 SetVehicleCustomSecondaryColour(vehicle, props.color2[1], props.color2[2], props.color2[3])
 				SetVehicleColours(vehicle, colorPrimary, props.color2[4])
-           end
+            end
         end
         if props.pearlescentColor then SetVehicleExtraColours(vehicle, props.pearlescentColor, wheelColor) end
         if props.interiorColor then SetVehicleInteriorColor(vehicle, props.interiorColor) end
@@ -1115,7 +1121,10 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
             SetVehicleNeonLightEnabled(vehicle, 3, props.neonEnabled[4])
         end
 		if props.neonColor then SetVehicleNeonLightsColour(vehicle, props.neonColor[1], props.neonColor[2], props.neonColor[3]) end
-        if props.headlightColor then SetVehicleHeadlightsColour(vehicle, props.headlightColor) end
+        if props.headlightColor then
+            if type(props.headlightColor) == "number" then ClearVehicleXenonLightsCustomColor(vehicle) SetVehicleXenonLightsColor(vehicle, props.headlightColor)
+            else SetVehicleXenonLightsCustomColor(vehicle, props.headlightColor[1], props.headlightColor[2], props.headlightColor[3]) SetVehicleXenonLightsColor(vehicle, -1) end
+        end
         if props.interiorColor then SetVehicleInteriorColour(vehicle, props.interiorColor) end
         if props.wheelSize then SetVehicleWheelSize(vehicle, props.wheelSize) end
         if props.wheelWidth then SetVehicleWheelWidth(vehicle, props.wheelWidth) end
@@ -1176,7 +1185,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         if props.liveryRoof then SetVehicleRoofLivery(vehicle, props.liveryRoof) end
 		if props.modDrift then SetDriftTyresEnabled(vehicle, true) end
 		SetVehicleTyresCanBurst(vehicle, not props.modBProofTires)
-		TriggerServerEvent('jim-mechanic:server:loadStatus', props.plate)
+		TriggerServerEvent('jim-mechanic:server:loadStatus', props, vehicle)
     end
 end
 ```
@@ -1184,7 +1193,7 @@ end
 ## QB-MechanicJob
 - **You don't NEED qb-mechaicjob to use Jim-Mechanic but doing so grants extra features**
 - Extra damages will be enabled by default if you use `qb-mechanicjob` and `qb-vehiclefailure`
-- This needs to be added the the main script, but if you **DON'T** want to use qb-mechanicjob but have an updated qb-vehiclefailure
+- If you **DON'T** want to use `qb-mechanicjob` but want to keep `qb-vehiclefailure`
 - REPLACE THIS EVENT (DON'T REMOVE) in qb-vehiclefailure > client.lua.
 - This will make it only work if qb-mechanicjob is started.
 
