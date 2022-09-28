@@ -964,7 +964,6 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
             windowTint = GetVehicleWindowTint(vehicle),
             windowStatus = windowStatus,
             doorStatus = doorStatus,
-            xenonColor = GetVehicleXenonLightsColour(vehicle),
             headlightColor = headlightColor,
             neonEnabled = {
                 IsVehicleNeonLightEnabled(vehicle, 0),
@@ -1041,10 +1040,8 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
     if DoesEntityExist(vehicle) then
         if props.extras then
             for id, enabled in pairs(props.extras) do
-                if enabled then
-                    SetVehicleExtra(vehicle, tonumber(id), 0)
-                else
-                    SetVehicleExtra(vehicle, tonumber(id), 1)
+                if enabled then SetVehicleExtra(vehicle, tonumber(id), 0)
+                else SetVehicleExtra(vehicle, tonumber(id), 1)
                 end
             end
         end
@@ -1152,7 +1149,6 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         if props.modSmokeEnabled then ToggleVehicleMod(vehicle, 20, props.modSmokeEnabled) end
         if props.modKit21 then SetVehicleMod(vehicle, 21, props.modKit21, false) end
         if props.modXenon then ToggleVehicleMod(vehicle, 22, props.modXenon) end
-        if props.xenonColor then SetVehicleXenonLightsColor(vehicle, props.xenonColor) end
         if props.modFrontWheels then SetVehicleMod(vehicle, 23, props.modFrontWheels, false) end
         if props.modBackWheels then SetVehicleMod(vehicle, 24, props.modBackWheels, false) end
         if props.modCustomTiresF then SetVehicleMod(vehicle, 23, props.modFrontWheels, props.modCustomTiresF) end
@@ -1185,7 +1181,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         if props.liveryRoof then SetVehicleRoofLivery(vehicle, props.liveryRoof) end
 		if props.modDrift then SetDriftTyresEnabled(vehicle, true) end
 		SetVehicleTyresCanBurst(vehicle, not props.modBProofTires)
-		TriggerServerEvent('jim-mechanic:server:loadStatus', props, vehicle)
+		TriggerServerEvent('jim-mechanic:server:loadStatus', props, VehToNet(vehicle))
     end
 end
 ```
@@ -1194,13 +1190,15 @@ end
 - **You don't NEED qb-mechaicjob to use Jim-Mechanic but doing so grants extra features**
 - Extra damages will be enabled by default if you use `qb-mechanicjob` and `qb-vehiclefailure`
 - If you **DON'T** want to use `qb-mechanicjob` but want to keep `qb-vehiclefailure`
-- REPLACE THIS EVENT (DON'T REMOVE) in qb-vehiclefailure > client.lua.
+- REPLACE this event (DON'T REMOVE) in qb-vehiclefailure > client.lua.
 - This will make it only work if qb-mechanicjob is started.
 
 ```lua
 -- Functions
 local function DamageRandomComponent()
+
 	if GetResourceState('qb-mechanicjob') ~= "started" then return end
+
     local dmgFctr = math.random() + math.random(0, 2)
     local randomComponent = DamageComponents[math.random(1, #DamageComponents)]
     local randomDamage = (math.random() + math.random(0, 1)) * dmgFctr
@@ -1243,14 +1241,3 @@ end
 RegisterNetEvent("hud:client:UpdateNitrous", function(hasnitro, level, show) SendNUIMessage({ type="set_status", statustype = "nitro", value = (level or 0)}) end)
 ```
 - This will make `jim-mechanic` trigger the HUD's NOS level changes
-
-## Chameleon Paint Mod
-- To add simple support for this now:
-	- Download this file: https://www.gta5-mods.com/misc/chameleon-paint-add-on
-    - Extract the zip anywhere
-    - Open the .rpf with OpenIV or Codewalker
-    - Extract the 3 files
-        - `carcols_gen9.meta`
-        - `carmodcols_gen9.meta`
-        - `vehicle_paint_ramps.ytd`
-    - Places these files into a folder inside `jim-mechanic` called `stream`
