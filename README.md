@@ -241,6 +241,7 @@ Read this before opening a ticket.
 ## manualrepair.lua / Non-Mechanic repair benches
 
 - This file creates repair benches that can **ONLY** be used when there isn't any mechanics on duty.
+ + To add/move a manual repair bench head to the bottom of the locations.lua [example here](https://github.com/jimathy/jim-mechanicguide#locationslua)
 - The benches are added to set locations at the top of this file
 - They are activated by targetting with `qb-target` while in a car
 - How the config.lua options are set will determine how the menu functions
@@ -644,28 +645,32 @@ RepairFuelCost = 8,
 ### Explanation of the locations and how to make one
 ```lua
 {	job = "mechanic",
-	autoClockout = true,
-	zones = {
-		vector2(154.69816589355, -3007.0153808594),
-		vector2(120.64015197754, -3006.7275390625),
-		vector2(120.48593902588, -3051.8874511719),
-		vector2(154.61296081543, -3051.5419921875)
+		zones = {
+			vector2(154.69816589355, -3007.0153808594),
+			vector2(120.64015197754, -3006.7275390625),
+			vector2(120.48593902588, -3051.8874511719),
+			vector2(154.61296081543, -3051.5419921875)
+		},
+		stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
+		store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
+		crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
+		clockin = { { coords = vector3(145.29, -3012.93, 6.94), heading = 86.0, }, },
+		nosrefill = { { coords = vector4(121.17, -3044.73, 7.04, 268.96) } },
+		manualRepair = { { coords = vector4(-213.98, -1333.99, 30.89, 358.43), prop = true, } },
+		garage = { spawn = vector4(-182.74, -1317.61, 30.63, 357.23),
+					out = vector4(-187.25, -1310.55, 31.3, 270.52),
+					list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+					prop = true },
+        payments = { coords = vector4(-200.68, -1314.53, 31.08, 0.0),
+			img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png width=150px></p>",
+			prop = true },
+		blip = vector3(-211.55, -1324.55, 30.9),
+		bliplabel = "Bennys Workshop",
+		blipcolor = 1,
+		discordlink = "",
+		discordcolour = 16711680,
+		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
 	},
-	stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
-	store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
-	crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
-	clockin = { { coords = vector3(145.29, -3012.93, 6.94), heading = 86.0, }, },
-	nosrefill = { { coords = vector4(121.17, -3044.73, 7.04, 268.96) } },
-	garage = { spawn = vector4(163.22, -3009.31, 5.27, 89.72),
-				out = vector4(157.37, -3016.57, 7.04, 179.58),
-				list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
-	payments = { coords = vector3(146.44, -3014.09, 6.94), heading = 195.0, img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png width=150px></p>" },
-	blip = vector3(139.91, -3023.83, 7.04),
-	bliplabel = "LS Tuner Shop",
-	blipcolor = 81,
-	discordlink = "",
-	discordcolour = 2571775,
-},
 ```
 ### Explanation of each part of the location snippet
 - `job`
