@@ -651,6 +651,7 @@ RepairFuelCost = 8,
 			vector2(120.48593902588, -3051.8874511719),
 			vector2(154.61296081543, -3051.5419921875)
 		},
+		autoClock = { enter = false, exit = true, },
 		stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
 		store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
 		crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
