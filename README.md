@@ -1,105 +1,16 @@
 # Mechanic Guide
-Read this before opening a ticket.
+Read this before opening a ticket. please GOD, read it.
 
----
-## - Index -
-1. [Performance Items](https://github.com/jimathy/jim-mechanicguide#performance-items)
-2. [Cosmetic Items](https://github.com/jimathy/jim-mechanicguide#cosmetic-items)
-3. [Mechanic Items](https://github.com/jimathy/jim-mechanicguide#mechanic-items)
-4. [Toolbox](https://github.com/jimathy/jim-mechanicguide#toolbox--check_tuneslua)
-5. [Mechanic_Tools](https://github.com/jimathy/jim-mechanicguide#mechanic_tools--repairlua)
-6. [manualrepair.lua](https://github.com/jimathy/jim-mechanicguide#manualrepairlua--non-mechanic-repair-benches)
-7. [police.lua](https://github.com/jimathy/jim-mechanicguide#policelua--emergency-repair-benches)
-8. [/preview](https://github.com/jimathy/jim-mechanicguide#previewlua---preview)
-9. [Config.lua](https://github.com/jimathy/jim-mechanicguide#configuration---configlua)
-- Basics
-	- [Config.Lan](https://github.com/jimathy/jim-mechanicguide#configlan)
-	- [Config.Debug](https://github.com/jimathy/jim-mechanicguide#configdebug)
-	- [Config.img](https://github.com/jimathy/jim-mechanicguide#configimg)
-	- [Config.JimShops](https://github.com/jimathy/jim-mechanicguide#configjimshops)
-	- [Config.JimMenu](https://github.com/jimathy/jim-mechanicguide#configjimmenu)
-	- [Config.distkph](https://github.com/jimathy/jim-mechanicguide#configdistkph)
-- Mechanic Controls
-	- [Config.isVehicleOwned](https://github.com/jimathy/jim-mechanicguide#configisvehicleowned)
-	- [Config.RequiresJob](https://github.com/jimathy/jim-mechanicguide#configrequiresjob)
-	- [Config.LocationBlips](https://github.com/jimathy/jim-mechanicguide#configlocationblips)
-	- [Config.LocationRequired](https://github.com/jimathy/jim-mechanicguide#configlocationrequired)
-	- [Config.CostmeticJob](https://github.com/jimathy/jim-mechanicguide#configcostmeticjob)
-	- [Config.FreeRepair](https://github.com/jimathy/jim-mechanicguide#configfreerepair)
-	- [Config.StashRepair](https://github.com/jimathy/jim-mechanicguide#configstashrepair)
-	- [Config.Stores](https://github.com/jimathy/jim-mechanicguide#configstores)
-	- [Config.StashCraft](https://github.com/jimathy/jim-mechanicguide#configstashcraft)
-	- [Config.Crafting](https://github.com/jimathy/jim-mechanicguide#configcrafting)
-- Preview Modifiers
-	- [Config.PreviewPhone](https://github.com/jimathy/jim-mechanicguide#configpreviewphone)
-	- [Config.PreviewJob](https://github.com/jimathy/jim-mechanicguide#configpreviewjob)
-	- [Config.PreviewLocation](https://github.com/jimathy/jim-mechanicguide#configpreviewlocation)
-	- [Config.PhoneMail](https://github.com/jimathy/jim-mechanicguide#configphonemail)
-- Cosmetic Removal
-	- [Config.CosmeticRemoval](https://github.com/jimathy/jim-mechanicguide#configcosmeticremoval)
-- Odometer Control
-	- [Config.ShowOdo](https://github.com/jimathy/jim-mechanicguide#configshowodo)
-	- [Config.OdoLocation](https://github.com/jimathy/jim-mechanicguide#configodolocation)
-- Manual Repair Benches
-	- [Config.ManualRepairCost](https://github.com/jimathy/jim-mechanicguide#configmanualrepaircost)
-	- [Config.ManualRepairBased](https://github.com/jimathy/jim-mechanicguide#configmanualrepairbased)
-	- [Config.ManualRepairPercent](https://github.com/jimathy/jim-mechanicguide#configmanualrepairpercent)
-	- [Config.repairEngine](https://github.com/jimathy/jim-mechanicguide#configrepairengine)
-	- [Config.repairExtras](https://github.com/jimathy/jim-mechanicguide#configrepairextras)
-	- [Config.dutyMessage](https://github.com/jimathy/jim-mechanicguide#configdutymessage)
-	- [Config.repairAnimate](https://github.com/jimathy/jim-mechanicguide#configrepairanimate)
-	- [Config.repairSpeed](https://github.com/jimathy/jim-mechanicguide#configrepairspeed)
-- NOS
-	- [Config.NosRefillCharge](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
-	- [Config.NosTopSpeed](https://github.com/jimathy/jim-mechanicguide#confignostopspeed)
-	- [Config.NosBoostPower](https://github.com/jimathy/jim-mechanicguide#confignosboostpower)
-	- [Config.NosBindings](https://github.com/jimathy/jim-mechanicguide#confignosbindngs)
-	- [Config.NitrousUseRate](https://github.com/jimathy/jim-mechanicguide#confignitroususerate)
-	- [Config.NitrousCoolDown](https://github.com/jimathy/jim-mechanicguide#confignosrefillcharge)
-	- [Config.CooldownConfirm](https://github.com/jimathy/jim-mechanicguide#configcooldownconfirm)
-	- [Config.nosDamage](https://github.com/jimathy/jim-mechanicguide#confignosdamage)
-	- [Config.boostExplode](https://github.com/jimathy/jim-mechanicguide#configboostexplode)
-	- [Config.EnableFlame](https://github.com/jimathy/jim-mechanicguide#configenableflame)
-	- [Config.EnableTrails](https://github.com/jimathy/jim-mechanicguide#configenabletrails)
-	- [Config.EnableScreen](https://github.com/jimathy/jim-mechanicguide#configenablescreen)
-	- [Config.skillcheck](https://github.com/jimathy/jim-mechanicguide#configskillcheck)
-	- [Config.explosiveFail](https://github.com/jimathy/jim-mechanicguide#configexplosivefail)
-	- [Config.explosiveFailJob](https://github.com/jimathy/jim-mechanicguide#configexplosivefailjob)
-- Discord Preview
-	- [Config.DiscordPreview](https://github.com/jimathy/jim-mechanicguide#configdiscordpreview)
-	- [Config.DiscordDefault](https://github.com/jimathy/jim-mechanicguide#configdiscorddefault)
-	- [Config.DiscordColour](https://github.com/jimathy/jim-mechanicguide#configdiscordcolour)
-- Repairs
-	- [Repair requirements](https://github.com/jimathy/jim-mechanicguide#repairrequirements)
-	- [Duct tape](https://github.com/jimathy/jim-mechanicguide#duct-tape)
-		1. [Config.DuctSimpleMode](https://github.com/jimathy/jim-mechanicguide#configductsimplemode)
-		2. [Config.MaxDuctEngine](https://github.com/jimathy/jim-mechanicguide#configmaxductengine)
-		3. [Config.DuctAmountEngine](https://github.com/jimathy/jim-mechanicguide#configductamountengine)
-		4. [Config.DuctTapeBody](https://github.com/jimathy/jim-mechanicguide#configducttapebody)
-		5. [Config.MaxDuctBody](https://github.com/jimathy/jim-mechanicguide#configmaxductbody)
-		6. [Config.DuctAmountBody](https://github.com/jimathy/jim-mechanicguide#configductamountbody)
-		7. [Config.RemoveDuctTape](https://github.com/jimathy/jim-mechanicguide#configremoveducttape)
-- Item Controls
-	- [Config.Jobroles](https://github.com/jimathy/jim-mechanicguide#configjobroles)
-	- [Config.nosBarColour](https://github.com/jimathy/jim-mechanicguide#confignosbarcolour)
-	- [Config.nosBarFull](https://github.com/jimathy/jim-mechanicguide#confignosbarfull)
-	- [Config.nosBarEmpty](https://github.com/jimathy/jim-mechanicguide#confignosbarempty)
-11. [Locations.lua](https://github.com/jimathy/jim-mechanicguide#locationslua)
-	1. [Snippet](https://github.com/jimathy/jim-mechanicguide#explanation-of-the-locations-and-how-to-make-one)
-	2. [PolyZone Help](https://github.com/jimathy/jim-mechanicguide#creating-a-new-polyzone-location)
-12. [recpies.lua](https://github.com/jimathy/jim-mechanicguide#recipeslua)
-	1. [Crafting](https://github.com/jimathy/jim-mechanicguide#crafting)
-	2. [Stores](https://github.com/jimathy/jim-mechanicguide#stores)
-13. [Installation Notes](https://github.com/jimathy/jim-mechanicguide#installation-notes)
-	1. [server.cfg](https://github.com/jimathy/jim-mechanicguide#add-the-script-to-the-server-resources)
-	2. [Item List](https://github.com/jimathy/jim-mechanicguide#item-installation)
-	3. [Dependancies](https://github.com/jimathy/jim-mechanicguide#dependancies)
-	4. [Mechboard](https://github.com/jimathy/jim-mechanicguide#mechboard-item)
-	5. [Update Core Events](https://github.com/jimathy/jim-mechanicguide#updating-core-events)
-	6. [QB-MechanicJob](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob)
-	7. [QB-MechanicJob Optimization](https://github.com/jimathy/jim-mechanicguide#qb-mechanicjob-optimization)
-	8. [Blue Nos Flames](https://github.com/jimathy/jim-mechanicguide#blue-nos-flames--nopixel-style)
-	9. [CodeM NOS Support]()
+## Multi-Framework Support
+My actual "live" support of this is very limited
+With the use of my free script `jim_bridge` the script is now able to be used fully on:
+- qb-core
+- qbx-core
+- ox_core
+- ex_extended - (with the use of `ox_lib`, `ox_target` and `ox_inventory`)
+
+The ones we can personally help with are qb-core and qbx-core, the others are just compatability as of now
+Most likely `es_extended` will have many options that I don't know about, so don't expect anything special from it
 
 ------------------
 ## Performance Items
@@ -116,22 +27,27 @@ Read this before opening a ticket.
 - brakes1 - "Tier 1 Brakes"
 - brakes2 - "Tier 2 Brakes"
 - brakes3 - "Tier 3 Brakes"
+
 - engine1 - "Tier 1 Engine"
 - engine2 - "Tier 2 Engine"
 - engine3 - "Tier 3 Engine"
 - engine4 - "Tier 4 Engine"
 - engine5 - "Tier 5 Engine"
+
 - suspension1 - "Tier 1 Suspension"
 - suspension2 - "Tier 2 Suspension"
 - suspension3 - "Tier 3 Suspension"
 - suspension4 - "Tier 4 Suspension"
 - suspension5 - "Tier 5 Suspension"
+
 - transmission1 - "Tier 1 Transmission"
 - transmission2 - "Tier 2 Transmission"
 - transmission3 - "Tier 3 Transmission"
 - transmission4 - "Tier 4 Transmission"
+
 - drifttires - "Drift Tires"
 - bprooftires - "Bulletproof Tires"
+
 - turbo - "Supercharger Turbo"
 - headlights - "Xenon Headlights"
 ```
@@ -163,6 +79,24 @@ Read this before opening a ticket.
 ```
 
 ------------------
+## Extra Damage Items
+
+- These items are for the extra damages included in jim-mechanic
+- The upgrades improve durability for each part and lower the chance of the damage effects kicking in
+- Oil Pump
+	- "Your engine is overheating" - Slowly damages your engine's health
+- Drive Shaft
+	- "The steering feels wrong.." - Affects steering temporarily
+- Spark Plugs
+	- "The engine has stalled" - The car will stop temporarily
+- Car Battery
+	- "Theres something affecting your lights.." - Makes the lights in your car flicker on and off
+- Fuel Tank
+	- "You hear something dripping.." - Lowers fuel level faster
+
+These can be repaired by a mechanic with mechanic tools item
+
+------------------
 ## Mechanic Items
 
 - This is the list of rest of the items that come with this script
@@ -185,10 +119,10 @@ Read this before opening a ticket.
 ## Toolbox / Check_tunes.lua
 
 - This is all about the item "toolbox" this item
-- The toolbox is only usable by mechanics, if `Config.RequiresJob` is enabled
+- The toolbox is only usable by mechanics, if `Config.System.ItemRequiresJob` is enabled
 - This item can only be used **OUTSIDE** of a vehicle.
 - This displays information about the vehicle's currently installed peformance modifications
-	- It will attempt to grab information from qb-core's `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
+	- It will attempt to grab information from `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
 	- It will list the names and levels of each installed modification, and even if they can be installed on the vehicle at all.
 	- If there is an installed item you can select it in the shown menu, then you will be the given a confirmation option to remove it. Doing so will set it back to stock and place the specific upgrade in your inventory.
 - At the bottom of this menu is a quick shortcut to what is displayed by the `/checkmods` command, which displays a simple list of all possible cosmetic mods that can applied to the current vehicle
@@ -197,14 +131,11 @@ Read this before opening a ticket.
 ## Mechanic_Tools / repair.lua
 
 - This menu is activated by the item "mechanic_tools"
-- Note: It tires to get all the information BEFORE the progressbars so if you don't get any animations, theres an error.
+- Note: It tires to get all the information BEFORE the progressbars so if you don't get any animations or menu, theres an error.
 - It will start with an animated check of the engine and body for damage and then get a list what it found.
-- How this menu fucntions is defined by the config options
+- How this menu functions is defined by the config options
 	- `FreeRepair = true` will allow you to repair the car with no requirements
 	- `StashRepair = true` will place a stash location for the mechanics to place their materials so they can be pulled from there and used when repairing
-	- The locations for these mechanic stashes are set at the top of the file, the default is set to Gabz Tuners.
-- When `qb-mechanicjob` is detected, it automatically attempts to load extra damages from this script
-	- If you don't use it, only Engine and Body will be available to repair
 
 ------------------
 ## Nitrous / nos.lua
@@ -244,39 +175,39 @@ Read this before opening a ticket.
 - The benches are added to set locations at the top of this file
 - They are activated by targetting with `qb-target` while in a car
 - How the config.lua options are set will determine how the menu functions
-	- `Config.ManualRepairCost` - This is the **SET** amount a vehicle repair will cost
-	- `Config.ManualRepairBased` - when `true` this overrides the above and grabs the value of the vehicle from vehicles.lua
-	- `Config.ManualRepairPercent` - The percentage of the vehicle value to be used. Default is `5`
-	- `Config.repairEngine` - `true` repair engine + body, `false` repair body only
-	- `Config.repairExtras` - `true` will attempt to repair extra damages from `qb-mechanicjob`
-	- `Config.dutyMessage` - The excuse for why people can't repair while mechanics are on duty.
-	- `Config.repairAnimate` - Animates the repair, better than a progress bar
-	- `Config.repairSpeed` - How fast each repair step takes
+	- `Config.ManualRepairs.ManualRepairCost` - This is the **SET** amount a vehicle repair will cost
+	- `Config.ManualRepairs.ManualRepairBased` - when `true` this overrides the above and grabs the value of the vehicle from vehicles.lua
+	- `Config.ManualRepairs.ManualRepairPercent` - The percentage of the vehicle value to be used. Default is `5`
+	- `Config.ManualRepairs.repairEngine` - `true` repair engine + body, `false` repair body only
+	- `Config.ManualRepairs.repairExtras` - `true` will attempt to repair extra damages
+	- `Config.ManualRepairs.dutyMessage` - The excuse for why people can't repair while mechanics are on duty.
+	- `Config.ManualRepairs.repairAnimate` - Animates the repair, better than a progress bar
+	- `Config.ManualRepairs.repairSpeed` - How fast each repair step takes
 
 ------------------
 ## police.lua / Emergency Repair Benches
 
 - This file creates repair/customisation benches for police
 	- These are intended to be for Police/EMS players, but other job roles can be added easily
-- It adds a bench to the set locations where they can repair and change a handful of cosmetics/extras.
-- This is activated by using third eye/qb-target
-- Note: I have been asked several times to add more options to this
-	- There are so many different custom police cars that use a random modification to change a small thing on the vehicle.
-	- At that point if I added more/all options it would just be another version of `qb-customs`
+- It adds a bench to the set locations where they can repair and change a cosmetics and performance.
+- This is activated by using your target script.
+- What can be accessed is handled in the config under `Emergency`
 
 ------------------
 ## preview.lua - `/preview`
 
 - The preview system is shown by typing `/preview`
-	- This system locks the vehicle in place
 	- Shows a menu with all possible cosmetic changes for the current vehicle
-	- You can close the menu to move the camera around
-	- Typing `/preview` opens it again allowing you to continue
-	- When complete, exit the vehicle and the preview will be classed as finished
+	- There is a `hardCam` config option to lock the camera, which is moveable with the camera button at the top of each cosmetic menu
+	- When complete, press "Stop Previewing" or exit the vehicle and the preview will be classed as finished
+	- This system locks the vehicle in place
+	- As per exploit protection, is attempts to change the vehicle plate so people can't save their changes
+		- This is controlled by `Config.Overrides.disablePreviewPlate`
+		- Some people need to remove this as some persistant vehicle scripts cause vehicles to duplicate.
 - When exiting the vehicle, depending on the set config options you will recieve a list of the changes made
-	- `Config.DiscordPreview` will attempt to print the list to a specified discord channel
-	- `Config.PreviewPhone = true` will attempt to use the set phone system to send the player a phone email with the list
-	- `Config.PreviewPhone = false` will spawn a item `mechboard` which when used will show the list of changes on screen
+	- `Config.Discord.DiscordPreview` will attempt to print the list to a specified discord channel
+	- `Config.Previews.PreviewPhone = true` will attempt to use the set phone system to send the player a phone email with the list
+	- `Config.Previews.PreviewPhone = false` will spawn a item `mechboard` which when used will show the list of changes on screen
 - Note: Spawning the `mechboard` item, trying to use it and then asking me why it's telling you not to spawn it shows you haven't read this-
 
 #### To create a discord webhook follow the following steps:
@@ -288,104 +219,328 @@ Read this before opening a ticket.
 - Click the Save button.
 - Paste the Webhook URL in the script you want to use it.
 
+## Car Lifts
+The script features built in synced carlift for your vehicles to be placed on
+- These aren't required for edits, but change the animation for RP
+- These are toggleable in the config if you wish to use another carlift script
+- All locations come preset with carlifts in some form
+	- Some have replacement carlifts
+	- Some have new carlifts
+	- Some make use of the carlifts already in a MLO
+
+For example:
+```lua
+carLift = {
+	{ coords = vec4(-201.85, -1319.65, 31.3, 19.36), useMLOLift = true },
+	{ coords = vec4(-221.27, -1318.71, 31.3, 352.67), useMLOLift = true },
+},
+```
+These locations make use of CarLifts already in place at Gabz Alta Street MLO, this is shown with the extra `use = true` or `useMLOLift = true`
+
 -----------------
-## Configuration - config.lua
+## Configuration
 
 There is little snippets of information on each line for these, but this is a more detailed list of information
 
 ### Config.Lan
-- This script has a built in locale system, it fairly updated versions, but the most recent versions of each language will be at: https://github.com/jimathy/mechanic-locales
+- This script has a built in locale system
 - You will need to then set the langauge with Config.Lan. By default it's set to english `"en"`
 
-### Config.Debug
+-----------------
+## System
+
+### Debug
 - This enables a debug mode, this will enable the debug boxes around locations to show you where they are set and where they are moving to.
 - This also enables Debug Messages in the F8 Menu and server console to help me and you with debugging issues
 
-### Config.img
-- Use this if if you are using an older/edited version of qb-menu
-- This is for adding images of inventory items to qb-menu and qb-input.
-- The default would be: `qb-inventory/html/images/`
-- I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
+### Menu
+- This controls which menu will be used
+	- "qb" for `qb-menu/qbx-menu` or `jixel-menu`
+	- "ox" for `ox_lib`
+	- "gta" for `warmenu`
 
-### Config.JimShops
-- Set this to true if you are using my free qb-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
-- Set to false to use default inventory style shops
+### Notify
+- This controls which notification system is to be called
+	- "qb" - `qb-core/qbx-core`
+	- "ox" - `ox_lib`
+	- "esx"	- `es_extended`
+	- "gta" - `Built in GTA notifications`
+	- "okok" - `okok-notify`
 
-### Config.JimMenu
-- Set this to true if you have an updated qb-menu with inventory icon/fontawesome support
-- This clear's `Config.img` so you don't get duplicate images
+### ProgressBar
+- This Controls what progressbar will be shown when using the script
+	- "qb" - `qb-core/qbx-core` Default
+	- "ox" - `ox_lib` default
+	- "gta" - `gta` default
+	- "esx" - `esx_progressbar` default
 
-### Config.distkph
+### distkph
 - This is only used when the odometer is used, toolbox menu and the onscreen milage display.
 	- `true` = distance in Kilometers
 	- `false` = distance in Miles
 
-### Config.Notify
-- This controls which notification system is to be called
+-----------------
+## General
 
-### Config.isVehicleOwned
-- This checks the `player_vehicles` database for if the vehicle is player owned or not.
+### JimShops
+- Set this to true if you are using my free qb-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
+- Set to false to use default inventory style shops
+
+### showClockInTill
+- Toggle this to enable showing toggling duty option at cash registers
+
+### showBossMenuTill
+- Toggle this to enable showing the BossMenu option at cash registers
+
+-----------------
+## Main
+
+### craftCam
+- This enables alot the use of custom cameras all around the script
+	- Its in the crafting location as this is what it was based on
+- It adds custom cameras for extra immersion when crafting or editing vehicles
+
+### MultiCraft
+- This enables multicrafting
+- Using this allows you to make multiples of crafting recipes faster
+
+### MultiCraftAmounts
+- This how many multiples will be offered when crafting
+
+### showItemBox
+- This was added for people with customised inventories
+- qb-inventory by default(for some reason) doesn't include the itembox event when triggered (use, add, remove)
+- you need to add them your self after, but some put them in to be automated
+- Basically this toggles showing these boxes or not, to stop doubling them up
+
+-----------------
+## Main
+
+### isVehicleOwned
+- This checks the database for if the vehicle is player owned or not.
 - If you only want customisations to be made to player owned vehicles, enable this.
 
-### Config.RequiresJob
+### ItemRequiresJob
 - This locks the mechanics performance items and cosmetic items behind a job role.
 - The jobs are set lower in the config.lua file at `Config.JobRoles`
 
-### Config.LocationBlips
-- This enables your locations blips even if you disable location requirements
-
-### Config.LocationRequired
+### JobLocationRequired
 - This makes it so items become location locked. You will only be able to work if you are in a polyzone for a job's location (items will only work in a set mechanic shop)
 - If this is disabled items can be used anywhere.
 
-### Config.CostmeticJob
-- This enables or disables a job requirement on cosmetic items.
-- This ignores `Config.RequiresJob`
+### LocationBlips
+- This enables your locations blips even if you disable location requirements
 
-### Config.FreeRepair
+### CostmeticJob
+- This enables or disables a job requirement on cosmetic items.
+- This ignores `Config.System.ItemRequiresJob`
+
+### JobRoles
+- This is the list of jobs that can use items in the script if `ItemRequiresJob` is enabled
+
+## Overrides
+
+### CosmeticItemRemoval
+- This makes cosmetic items have unlimited uses
+- Disabling this makes items remove from inventory after use.
+
+### updateServerDelay
+- This is to help stop overloading of server databases when many changes are happening between players
+- It adds a specified cooldown in seconds between changes which resets every time a change is made
+- It doesn't save the current vehicle's mods until the cooldown is done
+
+### ChameleonPaints
+- This adds makes the console exclusive chameleon paints appear when changing vehicle paints
+- They are loaded in the script by default and to fully remove, you need to remove the loaded files in the data and stream folders
+
+### DoorAnimations
+- This enables or disables door opening and closing animations whne editing vehicles or viewing modifications
+
+### disableNos
+- Enabling this disables ALL Nirtous boosting related effects controlled by `jim-mechanic`
+- Do this if you don't want NOS in your server/have another script controlling it
+
+### showItemBox
+- Enabling this shows the "item boxes" for using, adding and removing items
+- Inventory scripts like ox_lib don't use this
+- But some inventories do this automatically so this isn't needed and may show duplicate boxes
+
+### disablePreviewPlate
+- Enabling this `disables` the changing of the plates when previewing
+- There is added in exploit protection as some users were managing to save their vehicles with previewed mods on
+- Some persistant vehicle scripts counter act this and duplicate the vehicle.
+- Disabling stops this, but also removes the exploit protection
+- I am attempting to work with other devs to make this completely usable.
+
+### disableToolboxProp
+- This is a simple toggle to remove the toolbox when using the `toolbox` prop when using the `toolbox` item
+- For some reason it wont load for some people so this stops the script from hanging when loading it
+
+### saveOnExit
+- This is a toggle to enable attempting to save the current vehicle the player is exiting to the database
+- It doesn't save if your garage removes the vehicle "too fast" or instantly
+- This isn't on by default as it SHOULD save the vehicle while driving but adds an extra chance for it
+
+## Crafting
+
+### craftCam
+- This enables customs cameras ALL through the script, when modifying vehicles, when crafting
+- This is a toggle because some users complained of motion sickness
+
+### MultiCraft
+- This enables the basic MultiCrafting features when crafting
+- It allows users to make multiples of items when crafting
+
+### MutliCraftAmounts
+- This is the multiples of amounts you can craft when multicrafting
+
+## Harness
+
+### JobOnly
+- This enables the harness item to only be put on the vehicles by the job roles specified in `Config.Main.JobRoles`
+- Disabling this makes it so anyone can add a harness to a vehicle
+
+### HarnessControl
+- This enables harness and seatbelt controls inside jim-mechanic
+- Only use this if you have followed the install instructions correctly
+
+### seatbeltEasyLeave
+- This enables the ability to leave a vehicle while the `seatbelt` is attached
+- Disabling locks you in the vehicle until you unbuckle it
+
+### harmessEasyLeave
+- This enables the ability to leave a vehicle while the `harness` is attached
+- Disabling locks you in the vehicle until you unbuckle it
+
+### progOn
+- This adds a progress bar for players when buckling their `harness`
+- Disabling makes it instant
+
+### progOff
+- This adds a progress bar for players when un-buckling their `harness`
+- Disabling makes it instant
+
+### seatbeltNotify
+- When enabled shows a notification when buckling and unbuckling the seatbelt and harness
+
+### timeOn
+- How long it takes for the harness to be attached
+	- Default = `3000`
+### timeOff
+- How long it takes for the harness to be attached
+	- Default = `2000`
+
+### crashKill
+- Enable this to make it more likely when a player is ejected when crashing to be gravely injured
+
+
+## vehFailure
+
+### damages
+- This enables `jim-mechanic` control of vehicle extra damages in the script
+- Enable this if you don't use `qb-vehiclefailure`
+
+### repairKits
+- This takes control of `advancedrepairkit` and `repairkit` if you don't use either `qb-mechanicjob` or `qb-vehiclefailure`
+- On frameworks that didn't use thse items, they can be added manually after enabling this
+
+### fixCommand
+- This takes control of the `/fix` command after removing `qb-mechanicjob` and `qb-vehiclefailure`
+- This fixes the vehicle's extra damages aswell if enabled
+- Don't use this if you haven't removed the previous `/fix` command
+
+### PreventRoll
+- This was added to take over `qb-vehiclefailures` ability to prevent vehicles from being flipped over by pressing right or left while still in the drivers seat
+
+## CarLifts
+
+### Enable
+- Simply enables the use of carlifts in the script
+
+### Sound
+- Enables the carlift sounds when lifting up or moving down
+- Disabling makes them silent
+
+### CarLiftModelReplace
+- This is list of possible carlift models that can be replaced in MLO's
+
+### CarLiftUse
+- This is the list of usable carlife models in that a preadded to MLO's
+- It contains the offsets for the targets where you can control the lift
+
+## Repairs
+
+### FreeRepair
 - Enabling this makes all repairs by mechanic not require any materials to repair, so they repairs are free.
 
-### Config.StashRepair
+### StashRepair
 - This enables grabbing materials for repairs from their current jobs mechanics stash, these stashes are accessible at set loications in the locations.lua.
 - If disabled materials will be taken from the players inventory.
 
-### Config.Stores
-- This enables or completely disables the creation of shops for items.
-- If you want your mechanics to be able to either buy or get the items for free quickly, enable this.
+### ExtraDamages
+- This enables the extra damages throughout the script
+- (they are explained above)
 
-### Config.StashCraft
-- This enables grabbing materials for crafting from their current jobs mechanics stash, these stashes are accessible at set loications in the locations.lua.
-- If disabled materials will be taken from the players inventory.
+### EffectLevels
+- These are the percent of damage to each part that is needed before they have a chance of triggering
 
-### Config.Crafting
-- This enables or completely disables the creation of crafting locations for items.
-- If you want your mechanics to build and craft each item from ingredients, enable this.
+### Parts
+- This is a list of items that are needed to repair the vehicles
+- You can only set one item per repair but the `MAX` cost is set next to it
+- If you have 1% of damages as an example, you will only need 1 item
+- If you have 100% of damages, you will need the full amount
 
-### Config.PreviewPhone
-- Enabling this will make the changed cosmetics from `/preview` be collected into an email and be sent to the person who did the preview
-- Disabling this will make the list of changed costmetics and put it on a new "mechboard" item which is given to the person who did the preview
+## Previews
 
-### Config.PreviewJob
-- Enabling this locks the `/preview` command behind job roles
-- The jobs are set lower in the config.lua file at `Config.JobRoles`
+### hardCam
+- This enables custom set cameras for previewing
+- Pressing the camera button in the menu will change the angle of it
+- Stopping the preview will return it to normal
 
-### Config.PreviewLocation
-- Enable this if you want to lock the `/preview` command to only work in mechanic shops
+### PreviewPhone
+- If this is enabled, it will attempt to send an email to your phone of the changed mods during a preview
+	- The current supported phones as of writing this are:
+		- "gks"
+		- "qs"
+		- "qb"
+		- "roadphone"
+- If this is disabled then the user will recieve a clipboard `mechboard` item with the list of changes
 
-### Config.PhoneMail
-- This is used to determine your which phone script you use to send an email with preview details to your players
-- This is only used if `Config.PreviewPhone` is true
-- This currently as of writing this only supports `qb-phone` and `gks-phone`
+### PreviewJob
+- This makes it so a job role set in `Config.Main.JobRoles` is required to use the /preview command
 
-### Config.CosmeticRemoval
-- This simply, when enabled, will remove the cosmetic items (listed above) from your inventory when successfully added to the vehicle
-- Disabling make them unlimited use
+### PreviewLocation
+- This makes it so you need to be a job location's polyzone to use the /preview command
 
-### Config.ShowOdo
-- Enabling this will by default show the on-screen Odometer(Miles/Kilometers) when driving in an owned vehicle.
-- Players can toggle on and off theirselves easily with the command `/showodo`
+### PhoneMail
+- If PreviewPhone is true, change this to choose the correct phone system
+	- "qb" = use qb-phone for emails
+	- "gks" = use gks-phone for emails
+	- "qs" = use qs-smartphone for emails
+	- "roadphone" = use roadphone for emails
 
-### Config.OdoLocation
+### PhoneItems
+- This is list of phone items that are checked on the user
+- If not found the script will default to giving the player a clipboard instead
+
+## StoreCraft
+
+### Crafting
+- This simply enables crafting in the script for mechanics at targets set in locations.lua
+
+### StashCraft
+- This enables crafting from the set stash in each location for job roles
+
+### Stores
+- This enables the use of Stores to buy mechanic related items
+
+## Odometer
+
+### ShowOdo
+- This enables the use of the odometer hud in the script
+- Players can toggle this theirselves with `/showodo`
+
+### OdoLocation
 - This determines where the location of the Odometer will be for your players
 - List of possible options:
 ```
@@ -398,187 +553,194 @@ There is little snippets of information on each line for these, but this is a mo
 	"bottom-left"
 	"bottom-right"
 ```
-### Config.OdoShowIcons
+
+### OdoShowIcons
 - As of v2.9 there is now a "dashboard" feature that shows icons representing the damage
 - Toggling this enables or completely disables these
 
-### Config.OdoAlwaysShowIcons
-- Enable this to show the icons ALL THE TIM, even when parts are not damaged
+### OdoAlwaysShowIcons
+- Enable this to show the icons ALL THE TIME, even when parts are not damaged
 
-### Config.OdoIconsToShow
+### ShowToAll
+- Enabling this allows all passengers in the car to see the cars odometer hud
+
+### OdoIconsToShow
 - Fine control over which icons will show
 - Setting any of these to false will make the icon never be shown
 
-### Config.Chameleon
-- Enabling this enables the chameleon paint features, this requires the files to be installed correctly, disabling this will hide all references to it
+## Emergency
 
-### Config.WaxFeatures = true
-- This enables the ability to apply "Wax" to a car, making them stay clean for set amounts of time
+### requireDutyCheck
+- When enabled you won't be able to repair at an Emergency Repair bench if there are any people with the mechanics online
+- When disabled, the repair option will always be there
 
-### Config.ManualRepairCost
+### Jobs
+- These are the jobs and their grades that can that the bench
+
+### LockEmergency
+- This makes it so you can only modify vehicles with the class "emergency" in their meta data
+
+### Locations
+- The locations where the benches will spawn, they are currently defaulted to GABZ MPRD and PillBox
+
+### CosmeticsTable
+- The list of items that will show in the emergency bench menu's
+
+### PerformanceTable
+- The list of perfromance settigns that show in the emergency bench menu's
+
+## ManualRepairs
+
+### ManualRepairCost
 - This is the amount to charge people for a repair at the manual repair benches.
 - The default is `5000` but I recommend setting this to a high amount for your server
 - The intention of the mechanic script is to provide RP to the server, there is no RP in using a prop instead of talking to someone.
 
-### Config.ManualRepairCostBased
+### ManualRepairCostBased
 - Set this to true if you want the cost to ALWAYS be the amount set at "ManualRepairCost"
 - Set this to false if you want it to "ManualRepairCost" to be the max and cost is calculated by damage
 
-### Config.ManualRepairBased
+### ManualRepairBased
 - This overrides the previous setting `ManualRepairCost`
 - Setting this to true sets the price of the repair to be based on the cost of the vehicle in your vehicles.lua
 
-### Config.ManualRepairPercent
+### ManualRepairPercent
 - This is only used if `ManualRepairBased` is enabled.
 - This needs to be set to the percentage of the value of the vehicle you want to charge people per repair
 - For example:
 	- 5% of a $10,000 car would be $500 per repair
 	- 10% of a $200,000 car would be $20,000 per repair
 
-### Config.repairEngine
+### repairEngine
 - When enabled this will include engine repairs in the Repair Bench process
 - If disabled it will only attempt to repair the body
 
-### Config.repairExtras
+### repairExtras
 - Enabling this will include Extra Damages repair that come from `qb-mechanicjob`
 - if `qb-mechanicjob` is not found but this is true, it will skip over these extras
 
-### Config.dutyMessage
+### dutyMessage
 - I left his here as people were giving me different reasons for why they wanted the repair benches in the script
 - I'm leaving this up to them for how they want to phrase their notification.
 - Default: `"There is a Mechanic on duty!"`
 
-### Config.repairAnimate
+### repairAnimate
 - When `true` this will add a small animatied sequence to the repair of the vehicle, instead of people just sitting and watching a progressbar
 
-### Config.repairSpeed
+### repairSpeed
 - The time between each task while using repairAnimate. `1500` Seems to be a reasonable time for each one
 
-### Config.NosRefillCharge
+## antiLag
+
+### antiLagDis
+- This is the distance in units that players will hear the antilag noises
+
+## maxAudio
+- The max volume of the antilag audio clips (max setting is 1.0)
+
+## NOS
+
+### JobOnly
+- Only allow job roles to change NOS
+
+### NosRefillCharge
 - This only is used at NOS Refill stations, if you have added them to your locations in locations.lua
 - The amount in dollars required for a player to refill an Empty NOS can.
 - Note: There is also the option of a mechanic crafting them for you.
 - The default is `1000`
 
-### Config.NosTopSpeed
-- Controls the top speed "multiplier" when boosting
-- Functions a bit weirdly - 55.0 isn't 55 times normal speed, but seems a good boost value
-- Default - `55.0`
-- This seems to be a fair number but people have said that in their servers this number is too powerful and needed to be lowered
-- Removing this config option or setting this to `-1.0` disables it and leaves the accelleration boost on.
-
-### Config.NosBoostPower
+### NosBoostPower
 - Fine controls over the accelleration power for each boost level
 - Shown as a table for optimization
 ```lua
 NosBoostPower = {
-	10.0, -- Level 1
-	30.0, -- Level 2
+	20.0, -- Level 1
+	35.0, -- Level 2
 	50.0, -- Level 3
 },
 ```
 - These values seem a good default, but may need adjusting if you have customised vehicle meta files
 
-### Config.NitrousUseRate
+### NitrousUseRate
 - This is how fast the nitrous drains
-- Default - `0.4`
+- Default - `0.3`
 - Boost Level 1 changes this number minus half of this number (0.4 - (0.4 / 2))
 - Boost Level 3 changes this number plus half of this number (0.4 + (0.4 / 2))
 
-### Config.NitrousCoolDown
+### NitrousCoolDown
 - This is how long a player has to wait before the boost works again
 - Default - `7`
 - 7 seconds seems to be enough time for it to cooldown, setting this too low allows some servers players to travel at insane speeds after spamming the button
 - Set to `0` to disable this
 
-### Config.CooldownConfirm
+### CooldownConfirm
 - Simply, this will play a confirmation beep when cooldown is complete
 - Made is toggleable in the config in case people didn't like it
 
-### Config.nosDamage
+### nosDamage
 - This enables NOS causing damage to engine while boosting
 - Boosting for too long will play sound alerts and damage the Engine.
 
-### Config.boostExplode
+### boostExplode
 - If boosting too long at Boost Level 3 the NOS tank will explode.
 - Will cause damage to the vehicle and cause a fire.
 - This will remove remaining NOS from the vehicle and not give an empty tank
 
-### Config.EnableFlame
+### EnableFlame
 - `true` adds exhaut flame effects while boosting
-### Config.EnableTrails
+### EnableTrails
 - `true` adds taillight effects while boosting
-### Config.EnableScreen
+### EnableScreen
 - `true` True adds screen effects while boosting
 
-### Config.skillcheck
+### FlameDis
+- This is the distance check on the visuals for flame effects from nos
+- As of v3.3 this currently only applies to anti lag effects
+
+### skillcheck
 - When adding Nos to a vehicle there are three skillcheck script options available
 	- "qb-skillbar"
 	- "qb-lock"
 	- "ps-ui"
 
-### Config.explosiveFail
+### explosiveFail
 - When `true` there is a `1 in 10` chance for when you fail the skillcheck for the tank to explode in the vehicle.
 - Doesn't cause much damage, but fill push the player and vehicle back
 
-### Config.explosiveFailJob
+### explosiveFailJob
 - When `false` mecahnics WILL **NOT** cause explosions on failing the skill check
 - When `true` mechanics **CAN** cause explosions on failing the skill check
 
-### Config.DiscordPreview
+### HandlingChange
+- This helps change handling but is not recommended as some users reported this never resetting to defaults when boosting is finished.
+
+## Discord
+
+### DiscordPreview
 - This enables or disables the Discord Reports for the `/preview` command
 - When `true` this system will send the report to a specified discord channel using a webhook
 - When `false` this system will be ignored/disabled
 
-### Config.DiscordDefault
+### DiscordDefault
 - So people seem to be confused by this one.
 - This is the default channel that will be used, no matter where you are.
 - If you haven't set specific discord channels in a location, it **should** "default" to this link.
 
-### Config.DiscordColour
+### DiscordColour
 - You don't need to touch this, but this is the default colour of the post in the discord channel
 - The default colour is `16753920` - this is a "decimal" colour number, which is a yellow colour.
-
-
-### Repair requirements
-- These are the repair costs and materials that are needed
-- Each one has to have **1** set item
-- The cost for each is a MAX amount, eg. 100% damage would be this number, 50% would be half this number.
-- The defaults:
-```
-RepairEngine = "iron",
-RepairEngineCost = 8,
---
-RepairBody = "plastic",
-RepairBodyCost = 8,
---
-RepairRadiator = "newoil",
-RepairRadiatorCost = 1,
---
-RepairAxle = "axleparts",
-RepairAxleCost = 1,
---
-RepairBrakes = "sparkplugs",
-RepairBrakesCost = 1,
---
-RepairClutch = "carbattery",
-RepairClutchCost = 1,
---
-RepairFuel = "plastic",
-RepairFuelCost = 8,
-```
 
 ### Duct tape:
 - Many people forgot these are a thing while begging me to add repair benches..
 - The Ducttape item is intended to be an alternative and customisable version of repairkits
 - They are customisable and let even set the max amount of how much the parts get repaired
 
-### Config.DuctSimpleMode
+### Config.DuctTape.DuctSimpleMode
 - This sets the duct tape item into simple mode, repairing to the amount every time
 - `true` makes duct tape set every use to the amount set below at `MaxDuctEngine`
 - `false` uses the `DuctAmountEngine` value to repair the by vehicle each use
 
-### Config.MaxDuctEngine
+### Config.DuctTape.MaxDuctEngine
 - This is the MAX value the engine can be repaired by, leave this below 1000(100%) so people still need to use mechanic's
 - If `DuctSimpleMode` is `true` will set it straight to this amount
 - If `DuctSimpleMode` is `false` it will be the max amount it can be repaired to
@@ -589,11 +751,11 @@ RepairFuelCost = 8,
 - This is only used if `DuctSimpleMode` is `false`
 - Default = `100.0` - (10% Health)
 
-### Config.DuctTapeBody
+### Config.DuctTape.DuctTapeBody
 - Setting this to `true` allows the body to be repaired along side the engine
 - This is also affected by `DuctSimpleMode` in the same ways
 
-### Config.MaxDuctBody
+### Config.DuctTape.MaxDuctBody
 - This is the MAX value the body can be repaired by, leave this below 1000(100%) so people still need to use mechanic's
 - If `DuctSimpleMode` is `true` will set it straight to this amount
 - If `DuctSimpleMode` is `false` it will be the max amount it can be repaired to
@@ -608,26 +770,6 @@ RepairFuelCost = 8,
 - Simply, if this is `true` it will remove 1 ducttape item after use
 - If `false` it will be constantly reusable
 
-### Config.Jobroles:
-- This only matters if Config.RequiresJob is enabled and is specifcally for the ability to use the mecahnic items and use `/preview` command
-- These are the job roles that you want to be able to use the items in this script
-- Example layout for multiple job roles: `JobRoles = { "mechanic", "tuner" }`
-- The defualt setting is = `{ "mechanic" }`
-
-### Config.nosBarColour
-- When set to true it will create a "progressbar" for a value in colour
-	- <span style='color:green'>▓</span><span style='color:yellow'>▓</span><span style='color:red'>▓</span><span style='color:grey'>░</span>
-- when set to false it will leave the bars as white and grey
-	- <span style='color:white'>▓</span><span style='color:grey'>░</span>
-
-### Config.nosBarFull
-- This is the symbol used to indicate a full segment in the bar
-	- Default = `▓`
-
-### Config.nosBarEmpty
-- This is the symbol used to indicate an empty segment in the bar
-	- Default = `░`
-
 ------------------
 ## Locations.lua
 
@@ -638,66 +780,122 @@ RepairFuelCost = 8,
 	1. `/pzcreate poly`
 	2. `/pzadd`
 	3. `/pzfinish`
-- The main building's polyzones are made use of when `Config.LocationRequired = true` enabling this makes it so mechanic items can only used these zones.
-- If you have `Config.RequiresJob = false` then anyone can use the items in this location, setting this config option to `true` makes it so mechanic workers are the only ones who can use them.
+- The main building's polyzones are made use of when `Config.System.JobLocationRequired = true` enabling this makes it so mechanic items can only used these zones.
+- If you have `Config.System.RequiresJob = false` then anyone can use the items in this location, setting this config option to `true` makes it so mechanic workers are the only ones who can use them.
 
 ### Explanation of the locations and how to make one
 ```lua
-{	job = "mechanic",
-	autoClockout = true,
+Config.Locations[#Config.Locations+1] = {
+	Enabled = true,
+	job = "mechanic",
 	zones = {
-		vector2(154.69816589355, -3007.0153808594),
-		vector2(120.64015197754, -3006.7275390625),
-		vector2(120.48593902588, -3051.8874511719),
-		vector2(154.61296081543, -3051.5419921875)
+		vec2(-263.99075317382, -1349.6701660156),
+		vec2(-263.5015258789, -1298.9702148438),
+		vec2(-229.94024658204, -1299.089477539),
+		vec2(-229.81985473632, -1291.589477539),
+		vec2(-216.73846435546, -1288.9470214844),
+		vec2(-193.63221740722, -1294.155883789),
+		vec2(-174.24346923828, -1293.1431884766),
+		vec2(-151.77659606934, -1300.6693115234),
+		vec2(-151.88639831542, -1311.1921386718),
+		vec2(-177.41833496094, -1311.566772461),
+		vec2(-177.5919342041, -1351.1942138672)
 	},
-	stash = { { coords = vector3(144.38, -3051.3, 7.04), w = 0.6, d = 3.6, heading = 0.0 }, },
-	store = { { coords = vector3(128.64, -3014.68, 7.04), w = 1.6, d = 3.0, heading = 0.0, }, },
-	crafting = { { coords = vector3(136.71, -3051.29, 7.04), w = 0.6, d = 1.0, heading = 0.0, }, },
-	clockin = { { coords = vector3(145.29, -3012.93, 6.94), heading = 86.0, }, },
-	nosrefill = { { coords = vector4(121.17, -3044.73, 7.04, 268.96) } },
-	garage = { spawn = vector4(163.22, -3009.31, 5.27, 89.72),
-				out = vector4(157.37, -3016.57, 7.04, 179.58),
-				list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
-	payments = { coords = vector3(146.44, -3014.09, 6.94), heading = 195.0, img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png width=150px></p>" },
-	blip = vector3(139.91, -3023.83, 7.04),
-	bliplabel = "LS Tuner Shop",
-	blipcolor = 81,
-	discordlink = "",
-	discordcolour = 2571775,
-},
+	autoClock = { enter = true, exit = true, },
+	stash = {
+		{ coords = vec4(-226.48, -1316.17, 31.27, 0.0), w = 3.6, d = 0.8, },
+	},
+	store = {
+		{ coords = vec4(-228.64, -1314.19, 31.3, 90.0), w = 3.60, d = 0.8 },
+	},
+	crafting = {
+		{ coords = vec4(-214.82, -1339.74, 31.46, 90.0), w = 2.8, d = 1.5 },
+	},
+	clockin = {
+		{ coords = vec4(-195.55, -1316.46, 31.2, 181.72), prop = false },
+	},
+	manualRepair = {
+		{ coords = vec4(-200.28, -1311.62, 31.3, 0.0), prop = true, },
+	},
+	carLift = {
+        { coords = vec4(-201.85, -1319.65, 31.3, 19.36), use = true },
+        { coords = vec4(-221.27, -1318.71, 31.3, 352.67), use = true },
+    },
+	garage = {
+		spawn = vec4(-182.74, -1317.61, 30.63, 357.23),
+		out = vec4(-190.62, -1311.57, 31.3, 0.0),
+		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		prop = true
+	},
+	payments = {
+		img = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
+		{ coords = vec4(-192.21, -1316.34, 31.10, 285.83), prop = true },
+	},
+	Restrictions = {
+		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
+		Allow = { "tools", "cosmetics", "repairs", "nos", "perform" },
+	},
+	blip = {
+		coords = vec3(-211.55, -1324.55, 30.9),
+		label = "Bennys Original Motorworks",
+		color = 1,
+		sprite = 446,
+		disp = 6,
+		scale = 0.7,
+		cat = nil,
+	},
+	discord = {
+		link = "",
+		color = 16711680,
+	}
+}
 ```
 ### Explanation of each part of the location snippet
+- `Enabled`
+	- Toggling this enables or disables the current location
 - `job`
-	- The job that will work in this building
+	- The job role that will work in this building
 - `autoClockout`
 	- Take employees off duty when leaving the polyzone if they were working in this location
 - `zones`
-	- This is a batch of vector2 locations (usually corners of a building) to create a polyzone
+	- This is a batch of `vec2` locations (usually corners of a building) to create a polyzone
 - `stash`
 	- Where the job stashes will be accessible
-	- Only appears if `Config.stashCraft` or `Config.stashRepair` are `true`
+	- Only appears if `Config.StoreCraft.StashCraft` or `Config.Repairs.StashRepair` are `true`
 - `store` - Where the job lock stores will be accessible
-	- These stores are set in the recipes.lua
+	- These stores are set in the `recipes.lua`
 	- By default the items are priced at $0 (free)
 - `crafting`
 	- Where the crafting stations will be accessible
 - `clockin`
-	- Where the player can go on duty
+	- Where the player can go on duty (Clockin locations are also available at payment locations)
 - `nosrefill`
 	- Where the non-mechanic nos refill station will be
+- `carlift`
+	- This is the carlifts that appear when you enter the location, useMLOLift enables the use of a CarLift models used in custom MLO's
 - `garage` - The "job garage" system that spawns a fresh temporary car
-	- `spawn` - The vector4 location and direction where the spawned vehicle will appear
-	- `out` - The vector4 location and direction of the "parking meter" prop used to access the spawn menu
+	- `spawn` - The vec4 location and direction where the spawned vehicle will appear
+	- `out` - The vec4 location and direction of the "parking meter" prop used to access the spawn menu
 	- `list` - The list of vehicle spawn codes that will appear in the garage's menu
 - `payments`
 	- Location, heading, and job's logo used for access payment scripts (default: [jim-payments](https://github.com/jimathy/jim-payments))
+- `Restrictions`
+	- This section controls what CAN be edited in the location
+	- Each location comes with all the presets available
 - `blip`
 	- Where the map maker of the building will appear
-- `bliplabel`
+- `label`
 	- The name of the job/building that will appear on the map
-- `blipcolor`
+- `color`
 	- The colour id of the map marker
+- `sprite`
+	- The sprite of the blip for the maps
+- `disp`
+	-
+- `scale`
+	- The size of the blip marker (defaults are usually 0.7)
+- `cat`
+	- Category, this isn't required unless you have them set on your server
 - `discordlink`
 	- The webhook of the channel where this locations `/preview` reports are sent
 	- This can be set per location, all you need to do is grab a webhook from a discord channel and then paste it here
@@ -771,473 +969,3 @@ RepairFuelCost = 8,
 	}
 },
 ```
-
-------------------
-## Installation Notes
-
-### Add the script to the server resources
-- I highly recommend putting the `jim-mechanic` folder in a new folder called `[jim]`
-- Then add `ensure [jim]` AFTER your other scripts in your server.cfg
-
-
-### Item installation
-- Add the image files from the zip to your `qb-inventory > html > images` folder
-- Add these lines to your qb-core > shared lua under the Items section
-
-```lua
---Jim-Mechanic Vehicles
-	["mechanic_tools"] =    {["name"] = "mechanic_tools",   ["label"] = "Mechanic tools",		["weight"] = 0, ["type"] = "item",  ["image"] = "mechanic_tools.png",   ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Needed for vehicle repairs"},
-	["toolbox"] =           {["name"] = "toolbox",          ["label"] = "Toolbox",				["weight"] = 0, ["type"] = "item",  ["image"] = "toolbox.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Needed for Performance part removal"},
-	["ducttape"] =          {["name"] = "ducttape",         ["label"] = "Duct Tape",			["weight"] = 0, ["type"] = "item",  ["image"] = "bodyrepair.png",       ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Good for quick fixes"},
-	["mechboard"] =         {["name"] = "mechboard",        ["label"] = "Mechanic Sheet",		["weight"] = 0, ["type"] = "item",  ["image"] = "mechboard.png",        ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	--Performance
-	["turbo"] =             {["name"] = "turbo",            ["label"] = "Supercharger Turbo",	["weight"] = 0, ["type"] = "item",  ["image"] = "turbo.png",            ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Who doesn't need a 65mm Turbo??"},
-	["car_armor"]=          {["name"] = "car_armor",		["label"] = "Vehicle Armor",		["weight"] = 0, ["type"] = "item",  ["image"] = "armour.png",           ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["nos"]=                {["name"] = "nos",				["label"] = "NOS Bottle",			["weight"] = 0, ["type"] = "item",  ["image"] = "nos.png",              ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "A full bottle of NOS"},
-	["noscan"]=             {["name"] = "noscan",			["label"] = "Empty NOS Bottle",		["weight"] = 0, ["type"] = "item",  ["image"] = "noscan.png",           ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["description"] = "An Empty bottle of NOS"},
-	["noscolour"]=          {["name"] = "noscolour",		["label"] = "NOS Colour Injector",	["weight"] = 0, ["type"] = "item",  ["image"] = "noscolour.png", 		["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["description"] = "Make that purge spray"},
-
-	["engine1"]=            {["name"] = "engine1",			["label"] = "Tier 1 Engine",		["weight"] = 0, ["type"] = "item",  ["image"] = "engine1.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["engine2"]=            {["name"] = "engine2",			["label"] = "Tier 2 Engine",		["weight"] = 0, ["type"] = "item",  ["image"] = "engine2.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["engine3"]=            {["name"] = "engine3",			["label"] = "Tier 3 Engine",		["weight"] = 0, ["type"] = "item",  ["image"] = "engine3.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["engine4"]=            {["name"] = "engine4",			["label"] = "Tier 4 Engine",		["weight"] = 0, ["type"] = "item",  ["image"] = "engine4.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["engine5"]=            {["name"] = "engine5",			["label"] = "Tier 5 Engine",		["weight"] = 0, ["type"] = "item",  ["image"] = "engine5.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["transmission1"]=      {["name"] = "transmission1",    ["label"] = "Tier 1 Transmission",	["weight"] = 0, ["type"] = "item",  ["image"] = "transmission1.png",    ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["transmission2"]=      {["name"] = "transmission2",	["label"] = "Tier 2 Transmission",	["weight"] = 0, ["type"] = "item",  ["image"] = "transmission2.png",    ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["transmission3"]=      {["name"] = "transmission3",    ["label"] = "Tier 3 Transmission",	["weight"] = 0, ["type"] = "item",  ["image"] = "transmission3.png",    ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["transmission4"]=      {["name"] = "transmission4",	["label"] = "Tier 4 Transmission",	["weight"] = 0, ["type"] = "item",  ["image"] = "transmission4.png",    ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["brakes1"]=            {["name"] = "brakes1",			["label"] = "Tier 1 Brakes",		["weight"] = 0, ["type"] = "item",  ["image"] = "brakes1.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["brakes2"]=            {["name"] = "brakes2",			["label"] = "Tier 2 Brakes",		["weight"] = 0, ["type"] = "item",  ["image"] = "brakes2.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["brakes3"]=            {["name"] = "brakes3",			["label"] = "Tier 3 Brakes",		["weight"] = 0, ["type"] = "item",  ["image"] = "brakes3.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["suspension1"]=        {["name"] = "suspension1",		["label"] = "Tier 1 Suspension",	["weight"] = 0, ["type"] = "item",  ["image"] = "suspension1.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["suspension2"]=        {["name"] = "suspension2",		["label"] = "Tier 2 Suspension",	["weight"] = 0, ["type"] = "item",  ["image"] = "suspension2.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["suspension3"]=        {["name"] = "suspension3",		["label"] = "Tier 3 Suspension",	["weight"] = 0, ["type"] = "item",  ["image"] = "suspension3.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["suspension4"]=        {["name"] = "suspension4",		["label"] = "Tier 4 Suspension",	["weight"] = 0, ["type"] = "item",  ["image"] = "suspension4.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["suspension5"]=        {["name"] = "suspension5",		["label"] = "Tier 5 Suspension",	["weight"] = 0, ["type"] = "item",  ["image"] = "suspension5.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["bprooftires"]=        {["name"] = "bprooftires",		["label"] = "Bulletproof Tires",	["weight"] = 0, ["type"] = "item",  ["image"] = "bprooftires.png",      ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["drifttires"]=         {["name"] = "drifttires",		["label"] = "Drift Tires",			["weight"] = 0, ["type"] = "item",  ["image"] = "drifttires.png",       ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	--Cosmetics
-	["underglow_controller"]={["name"] = "underglow_controller",["label"] = "Neon Controller",	["weight"] = 0, ["type"] = "item",  ["image"] = "underglow_controller.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["description"] = "RGB LED Vehicle Remote"},
-	["headlights"]=         {["name"] = "headlights",       ["label"] = "Xenon Headlights",		["weight"] = 0, ["type"] = "item",  ["image"] = "headlights.png",       ["unique"] = true, 	["useable"] = true, ["shouldClose"] = true, ["description"] = "8k HID headlights"},
-
-	["tint_supplies"]=      {["name"] = "tint_supplies",    ["label"] = "Tint Supplies",		["weight"] = 0, ["type"] = "item",  ["image"] = "tint_supplies.png",    ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["description"] = "Supplies for window tinting"},
-
-	["customplate"]=        {["name"] = "customplate",      ["label"] = "Customized Plates",	["weight"] = 0, ["type"] = "item",  ["image"] = "plate.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["hood"]=               {["name"] = "hood",             ["label"] = "Vehicle Hood",			["weight"] = 0, ["type"] = "item",  ["image"] = "hood.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["roof"]=               {["name"] = "roof",             ["label"] = "Vehicle Roof",			["weight"] = 0, ["type"] = "item",  ["image"] = "roof.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["spoiler"]=            {["name"] = "spoiler",          ["label"] = "Vehicle Spoiler",		["weight"] = 0, ["type"] = "item",  ["image"] = "spoiler.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["bumper"]=             {["name"] = "bumper",           ["label"] = "Vehicle Bumper",		["weight"] = 0, ["type"] = "item",  ["image"] = "bumper.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["skirts"]=             {["name"] = "skirts",           ["label"] = "Vehicle Skirts",		["weight"] = 0, ["type"] = "item",  ["image"] = "skirts.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["exhaust"]=            {["name"] = "exhaust",          ["label"] = "Vehicle Exhaust",		["weight"] = 0, ["type"] = "item",  ["image"] = "exhaust.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["seat"]=               {["name"] = "seat",             ["label"] = "Seat Cosmetics",		["weight"] = 0, ["type"] = "item",  ["image"] = "seat.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["rollcage"]=           {["name"] = "rollcage",         ["label"] = "Roll Cage",			["weight"] = 0, ["type"] = "item",  ["image"] = "rollcage.png", 		["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["rims"]=               {["name"] = "rims",             ["label"] = "Custom Wheel Rims",	["weight"] = 0, ["type"] = "item",  ["image"] = "rims.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["livery"]=             {["name"] = "livery",           ["label"] = "Livery Roll",			["weight"] = 0, ["type"] = "item",  ["image"] = "livery.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["paintcan"]=           {["name"] = "paintcan",         ["label"] = "Vehicle Spray Can",	["weight"] = 0, ["type"] = "item",  ["image"] = "spraycan.png", 		["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["tires"]=              {["name"] = "tires",            ["label"] = "Drift Smoke Tires",	["weight"] = 0, ["type"] = "item",  ["image"] = "tires.png", 	  		["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["horn"]=               {["name"] = "horn",             ["label"] = "Custom Vehicle Horn",	["weight"] = 0, ["type"] = "item",  ["image"] = "horn.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	["internals"] =         {["name"] = "internals",        ["label"] = "Internal Cosmetics",	["weight"] = 0, ["type"] = "item",  ["image"] = "internals.png", 		["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-	["externals"] =         {["name"] = "externals",        ["label"] = "Exterior Cosmetics",	["weight"] = 0, ["type"] = "item",  ["image"] = "mirror.png", 			["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
-	--Repair Parts
-	["newoil"] =            {["name"] = "newoil",           ["label"] = "Car Oil",				["weight"] = 0, ["type"] = "item",  ["image"] = "caroil.png",           ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
-	["sparkplugs"]=         {["name"] = "sparkplugs",       ["label"] = "Spark Plugs",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparkplugs.png",       ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
-	["carbattery"]=         {["name"] = "carbattery",       ["label"] = "Car Battery",			["weight"] = 0, ["type"] = "item",  ["image"] = "carbattery.png",       ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
-	["axleparts"]=          {["name"] = "axleparts",        ["label"] = "Axle Parts",			["weight"] = 0, ["type"] = "item",  ["image"] = "axleparts.png",        ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
-	["sparetire"]=          {["name"] = "sparetire",        ["label"] = "Spare Tire",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparetire.png",        ["unique"] = true,  ["useable"] = false,["shouldClose"] = false,["description"] = ""},
-```
-
-## Dependancies
-- This script requires `qb-menu` and `qb-input` for the menu systems
-- This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
-- This script is also designed to use [jim-payments](https://github.com/jimathy/jim-payments) for charging customers and sending money to the society accounts
-
-## NOS + Odometer
-- There are expanded features included in this scripts with SQL
-- The included `vehaddon.sql` file needs to be imported into your player_vehicles database to add the appropriate columns (traveldistance, hasnitro, noslevel)
-- The `hasnitro` and `noslevel` columns being added enables the of saving Nitrous levels through server restarts
-- The `traveldistance` column adds an Odometer to the toolbox/mechanic_tools menus, this this can retrieved in miles or kilometers.
-
-
-## "mechboard" item
-- **This isn't fully required but helps organise multiples of the "mechboard"**
-- The MechBoard item is an item given to the person who uses the preview menu and makes changes
-- To make full use of this item you need to add the ability for the item to show item info in your inventory system
-- I have only done this with `qb-inventory` and `lj-inventory` as they are similar
-	- `qb-inventory/html/js/app.js`
-
-- Search for "harness" or Scroll down until you find:
-```js
-} else if (itemData.name == "harness") {
-	$(".item-info-title").html("<p>" + itemData.label + "</p>");
-	$(".item-info-description").html(
-		"<p>" + itemData.info.uses + " uses left.</p>"
-	);
-```
-- Directly underneath this add:
-```js
-} else if (itemData.name == "mechboard") {
-	$(".item-info-title").html("<p>" + itemData.label + "</p>");
-	$(".item-info-description").html(
-		"<p>" + itemData.info.vehplate + "</p>" +
-		"<p>" + itemData.info.veh + "</p>"
-	);
-```
-- When successfully added the mechboards will show the vehicle and plate number
-
-## Updating core events
-- To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your qb-core/client/functions.lua
-- Replace `GetVehicleProperties` and `SetVehicleProperties` functions with these:
-```lua
-function QBCore.Functions.GetVehicleProperties(vehicle)
-    if DoesEntityExist(vehicle) then
-        local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
-		local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
-
-        if GetVehicleXenonLightsCustomColor(vehicle) == 1 then
-            local _, r, g, b = GetVehicleXenonLightsCustomColor(vehicle)
-            headlightColor = { r, g, b }
-        else
-            headlightColor = GetVehicleHeadlightsColour(vehicle)
-        end
-        if GetIsVehiclePrimaryColourCustom(vehicle) then
-            local r, g, b = GetVehicleCustomPrimaryColour(vehicle)
-            colorPrimary = { r, g, b, colorPrimary }
-        end
-        if GetIsVehicleSecondaryColourCustom(vehicle) then
-            local r, g, b = GetVehicleCustomSecondaryColour(vehicle)
-            colorSecondary = { r, g, b, colorSecondary }
-        end
-        local extras = {}
-        for extraId = 0, 12 do
-            if DoesExtraExist(vehicle, extraId) then
-                local state = IsVehicleExtraTurnedOn(vehicle, extraId) == 1
-                extras[tostring(extraId)] = state
-            end
-        end
-        local modLivery = GetVehicleMod(vehicle, 48)
-        if GetVehicleMod(vehicle, 48) == -1 and GetVehicleLivery(vehicle) ~= 0 then modLivery = GetVehicleLivery(vehicle) end
-        local tireHealth = {}
-        local tireBurstState = {}
-        local tireBurstCompletely = {}
-        for _, id in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
-            tireHealth[id] = GetVehicleWheelHealth(vehicle, id, false)
-            tireBurstState[id] = IsVehicleTyreBurst(vehicle, id, false)
-            tireBurstCompletely[id] = IsVehicleTyreBurst(vehicle, id, true)
-        end
-        local windowStatus = {}
-        for i = 0, 7 do windowStatus[i] = IsVehicleWindowIntact(vehicle, i) == 1 end
-        local doorStatus = {}
-        for i = 0, 5 do doorStatus[i] = IsVehicleDoorDamaged(vehicle, i) == 1 end
-        return {
-            model = GetEntityModel(vehicle),
-            plate = QBCore.Functions.GetPlate(vehicle),
-            plateIndex = GetVehicleNumberPlateTextIndex(vehicle),
-            bodyHealth = QBCore.Shared.Round(GetVehicleBodyHealth(vehicle), 0.1),
-            engineHealth = QBCore.Shared.Round(GetVehicleEngineHealth(vehicle), 0.1),
-            tankHealth = QBCore.Shared.Round(GetVehiclePetrolTankHealth(vehicle), 0.1),
-            fuelLevel = QBCore.Shared.Round(GetVehicleFuelLevel(vehicle), 0.1),
-            dirtLevel = QBCore.Shared.Round(GetVehicleDirtLevel(vehicle), 0.1),
-            oilLevel = QBCore.Shared.Round(GetVehicleOilLevel(vehicle), 0.1),
-            color1 = colorPrimary,
-            color2 = colorSecondary,
-            pearlescentColor = pearlescentColor,
-            dashboardColor = GetVehicleDashboardColour(vehicle),
-            wheelColor = wheelColor,
-            wheels = GetVehicleWheelType(vehicle),
-            wheelSize = GetVehicleWheelSize(vehicle),
-            wheelWidth = GetVehicleWheelWidth(vehicle),
-            tireHealth = tireHealth,
-            tireBurstState = tireBurstState,
-            tireBurstCompletely = tireBurstCompletely,
-            windowTint = GetVehicleWindowTint(vehicle),
-            windowStatus = windowStatus,
-            doorStatus = doorStatus,
-            headlightColor = headlightColor,
-            neonEnabled = {
-                IsVehicleNeonLightEnabled(vehicle, 0),
-                IsVehicleNeonLightEnabled(vehicle, 1),
-                IsVehicleNeonLightEnabled(vehicle, 2),
-                IsVehicleNeonLightEnabled(vehicle, 3)
-            },
-            neonColor = table.pack(GetVehicleNeonLightsColour(vehicle)),
-            interiorColor = GetVehicleInteriorColour(vehicle),
-            extras = extras,
-            tyreSmokeColor = table.pack(GetVehicleTyreSmokeColor(vehicle)),
-            modSpoilers = GetVehicleMod(vehicle, 0),
-            modFrontBumper = GetVehicleMod(vehicle, 1),
-            modRearBumper = GetVehicleMod(vehicle, 2),
-            modSideSkirt = GetVehicleMod(vehicle, 3),
-            modExhaust = GetVehicleMod(vehicle, 4),
-            modFrame = GetVehicleMod(vehicle, 5),
-            modGrille = GetVehicleMod(vehicle, 6),
-            modHood = GetVehicleMod(vehicle, 7),
-            modFender = GetVehicleMod(vehicle, 8),
-            modRightFender = GetVehicleMod(vehicle, 9),
-            modRoof = GetVehicleMod(vehicle, 10),
-            modEngine = GetVehicleMod(vehicle, 11),
-            modBrakes = GetVehicleMod(vehicle, 12),
-            modTransmission = GetVehicleMod(vehicle, 13),
-            modHorns = GetVehicleMod(vehicle, 14),
-            modSuspension = GetVehicleMod(vehicle, 15),
-            modArmor = GetVehicleMod(vehicle, 16),
-            modKit17 = GetVehicleMod(vehicle, 17),
-            modTurbo = IsToggleModOn(vehicle, 18),
-            modKit19 = GetVehicleMod(vehicle, 19),
-            modSmokeEnabled = IsToggleModOn(vehicle, 20),
-            modKit21 = GetVehicleMod(vehicle, 21),
-            modXenon = IsToggleModOn(vehicle, 22),
-            modFrontWheels = GetVehicleMod(vehicle, 23),
-            modBackWheels = GetVehicleMod(vehicle, 24),
-            modCustomTiresF = GetVehicleModVariation(vehicle, 23),
-            modCustomTiresR = GetVehicleModVariation(vehicle, 24),
-            modPlateHolder = GetVehicleMod(vehicle, 25),
-            modVanityPlate = GetVehicleMod(vehicle, 26),
-            modTrimA = GetVehicleMod(vehicle, 27),
-            modOrnaments = GetVehicleMod(vehicle, 28),
-            modDashboard = GetVehicleMod(vehicle, 29),
-            modDial = GetVehicleMod(vehicle, 30),
-            modDoorSpeaker = GetVehicleMod(vehicle, 31),
-            modSeats = GetVehicleMod(vehicle, 32),
-            modSteeringWheel = GetVehicleMod(vehicle, 33),
-            modShifterLeavers = GetVehicleMod(vehicle, 34),
-            modAPlate = GetVehicleMod(vehicle, 35),
-            modSpeakers = GetVehicleMod(vehicle, 36),
-            modTrunk = GetVehicleMod(vehicle, 37),
-            modHydrolic = GetVehicleMod(vehicle, 38),
-            modEngineBlock = GetVehicleMod(vehicle, 39),
-            modAirFilter = GetVehicleMod(vehicle, 40),
-            modStruts = GetVehicleMod(vehicle, 41),
-            modArchCover = GetVehicleMod(vehicle, 42),
-            modAerials = GetVehicleMod(vehicle, 43),
-            modTrimB = GetVehicleMod(vehicle, 44),
-            modTank = GetVehicleMod(vehicle, 45),
-            modWindows = GetVehicleMod(vehicle, 46),
-            modKit47 = GetVehicleMod(vehicle, 47),
-            modLivery = modLivery,
-            modKit49 = GetVehicleMod(vehicle, 49),
-            liveryRoof = GetVehicleRoofLivery(vehicle),
-			modDrift = GetDriftTyresEnabled(vehicle),
-			modBProofTires = not GetVehicleTyresCanBurst(vehicle),
-        }
-    else
-        return
-    end
-end
-
-function QBCore.Functions.SetVehicleProperties(vehicle, props)
-    if DoesEntityExist(vehicle) then
-        if props.extras then
-            for id, enabled in pairs(props.extras) do
-                if enabled then SetVehicleExtra(vehicle, tonumber(id), 0)
-                else SetVehicleExtra(vehicle, tonumber(id), 1)
-                end
-            end
-        end
-        local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
-        local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
-        SetVehicleModKit(vehicle, 0)
-        if props.plate then SetVehicleNumberPlateText(vehicle, props.plate) end
-        if props.plateIndex then SetVehicleNumberPlateTextIndex(vehicle, props.plateIndex) end
-        if props.bodyHealth then SetVehicleBodyHealth(vehicle, props.bodyHealth + 0.0) end
-        if props.engineHealth then SetVehicleEngineHealth(vehicle, props.engineHealth + 0.0) end
-        if props.tankHealth then SetVehiclePetrolTankHealth(vehicle, props.tankHealth) end
-        if props.fuelLevel then SetVehicleFuelLevel(vehicle, props.fuelLevel + 0.0) end
-        if props.dirtLevel then SetVehicleDirtLevel(vehicle, props.dirtLevel + 0.0) end
-        if props.oilLevel then SetVehicleOilLevel(vehicle, props.oilLevel) end
-        if props.color1 then
-			if type(props.color1) == "number" then
-				colorPrimary = props.color1
-				SetVehicleColours(vehicle, colorPrimary, colorSecondary)
-			else
-				colorPrimary = props.color1[4]
-				SetVehicleCustomPrimaryColour(vehicle, props.color1[1], props.color1[2], props.color1[3])
-				SetVehicleColours(vehicle, props.color1[4], colorSecondary)
-            end
-        end
-        if props.color2 then
-            if type(props.color2) == "number" then
-				SetVehicleColours(vehicle, colorPrimary, props.color2)
-			else
-                SetVehicleCustomSecondaryColour(vehicle, props.color2[1], props.color2[2], props.color2[3])
-				SetVehicleColours(vehicle, colorPrimary, props.color2[4])
-            end
-        end
-        if props.pearlescentColor then SetVehicleExtraColours(vehicle, props.pearlescentColor, wheelColor) end
-        if props.interiorColor then SetVehicleInteriorColor(vehicle, props.interiorColor) end
-        if props.dashboardColor then SetVehicleDashboardColour(vehicle, props.dashboardColor) end
-        if props.wheelColor then SetVehicleExtraColours(vehicle, props.pearlescentColor or pearlescentColor, props.wheelColor) end
-        if props.wheels then SetVehicleWheelType(vehicle, props.wheels) end
-        if props.tireHealth then
-            for wheelIndex, health in pairs(props.tireHealth) do
-                SetVehicleWheelHealth(vehicle, wheelIndex, health)
-            end
-        end
-        if props.tireBurstState then
-            for wheelIndex, burstState in pairs(props.tireBurstState) do
-                if burstState then
-                    SetVehicleTyreBurst(vehicle, tonumber(wheelIndex), false, 1000.0)
-                end
-            end
-        end
-        if props.tireBurstCompletely then
-            for wheelIndex, burstState in pairs(props.tireBurstCompletely) do
-                if burstState then
-                    SetVehicleTyreBurst(vehicle, tonumber(wheelIndex), true, 1000.0)
-                end
-            end
-        end
-        if props.windowTint then SetVehicleWindowTint(vehicle, props.windowTint) end
-        if props.windowStatus then
-			for windowIndex, smashWindow in pairs(props.windowStatus) do
-                if not smashWindow then SmashVehicleWindow(vehicle, windowIndex) end
-            end
-        end
-		if props.doorStatus then
-            for doorIndex, breakDoor in pairs(props.doorStatus) do
-                if breakDoor then
-                    SetVehicleDoorBroken(vehicle, tonumber(doorIndex), true)
-                end
-            end
-        end
-        if props.neonEnabled then
-            SetVehicleNeonLightEnabled(vehicle, 0, props.neonEnabled[1])
-            SetVehicleNeonLightEnabled(vehicle, 1, props.neonEnabled[2])
-            SetVehicleNeonLightEnabled(vehicle, 2, props.neonEnabled[3])
-            SetVehicleNeonLightEnabled(vehicle, 3, props.neonEnabled[4])
-        end
-		if props.neonColor then SetVehicleNeonLightsColour(vehicle, props.neonColor[1], props.neonColor[2], props.neonColor[3]) end
-        if props.headlightColor then
-            if type(props.headlightColor) == "number" then ClearVehicleXenonLightsCustomColor(vehicle) SetVehicleXenonLightsColor(vehicle, props.headlightColor)
-            else SetVehicleXenonLightsCustomColor(vehicle, props.headlightColor[1], props.headlightColor[2], props.headlightColor[3]) SetVehicleXenonLightsColor(vehicle, -1) end
-        end
-        if props.interiorColor then SetVehicleInteriorColour(vehicle, props.interiorColor) end
-        if props.wheelSize then SetVehicleWheelSize(vehicle, props.wheelSize) end
-        if props.wheelWidth then SetVehicleWheelWidth(vehicle, props.wheelWidth) end
-        if props.tyreSmokeColor then SetVehicleTyreSmokeColor(vehicle, props.tyreSmokeColor[1], props.tyreSmokeColor[2], props.tyreSmokeColor[3]) end
-        if props.modSpoilers then SetVehicleMod(vehicle, 0, props.modSpoilers, false) end
-        if props.modFrontBumper then SetVehicleMod(vehicle, 1, props.modFrontBumper, false) end
-        if props.modRearBumper then SetVehicleMod(vehicle, 2, props.modRearBumper, false) end
-        if props.modSideSkirt then SetVehicleMod(vehicle, 3, props.modSideSkirt, false) end
-        if props.modExhaust then SetVehicleMod(vehicle, 4, props.modExhaust, false) end
-        if props.modFrame then SetVehicleMod(vehicle, 5, props.modFrame, false) end
-        if props.modGrille then SetVehicleMod(vehicle, 6, props.modGrille, false) end
-        if props.modHood then SetVehicleMod(vehicle, 7, props.modHood, false) end
-        if props.modFender then SetVehicleMod(vehicle, 8, props.modFender, false) end
-        if props.modRightFender then SetVehicleMod(vehicle, 9, props.modRightFender, false) end
-        if props.modRoof then SetVehicleMod(vehicle, 10, props.modRoof, false) end
-        if props.modEngine then SetVehicleMod(vehicle, 11, props.modEngine, false) end
-        if props.modBrakes then SetVehicleMod(vehicle, 12, props.modBrakes, false) end
-		if props.modTransmission then SetVehicleMod(vehicle, 13, props.modTransmission, false) end
-        if props.modHorns then SetVehicleMod(vehicle, 14, props.modHorns, false) end
-        if props.modSuspension then SetVehicleMod(vehicle, 15, props.modSuspension, false) end
-        if props.modArmor then SetVehicleMod(vehicle, 16, props.modArmor, false) end
-        if props.modKit17 then SetVehicleMod(vehicle, 17, props.modKit17, false) end
-        if props.modTurbo then ToggleVehicleMod(vehicle, 18, props.modTurbo) end
-        if props.modKit19 then SetVehicleMod(vehicle, 19, props.modKit19, false) end
-        if props.modSmokeEnabled then ToggleVehicleMod(vehicle, 20, props.modSmokeEnabled) end
-        if props.modKit21 then SetVehicleMod(vehicle, 21, props.modKit21, false) end
-        if props.modXenon then ToggleVehicleMod(vehicle, 22, props.modXenon) end
-        if props.modFrontWheels then SetVehicleMod(vehicle, 23, props.modFrontWheels, false) end
-        if props.modBackWheels then SetVehicleMod(vehicle, 24, props.modBackWheels, false) end
-        if props.modCustomTiresF then SetVehicleMod(vehicle, 23, props.modFrontWheels, props.modCustomTiresF) end
-        if props.modCustomTiresR then SetVehicleMod(vehicle, 24, props.modBackWheels, props.modCustomTiresR) end
-		if props.modPlateHolder then SetVehicleMod(vehicle, 25, props.modPlateHolder, false) end
-        if props.modVanityPlate then SetVehicleMod(vehicle, 26, props.modVanityPlate, false) end
-        if props.modTrimA then SetVehicleMod(vehicle, 27, props.modTrimA, false) end
-        if props.modOrnaments then SetVehicleMod(vehicle, 28, props.modOrnaments, false) end
-        if props.modDashboard then SetVehicleMod(vehicle, 29, props.modDashboard, false) end
-        if props.modDial then SetVehicleMod(vehicle, 30, props.modDial, false) end
-        if props.modDoorSpeaker then SetVehicleMod(vehicle, 31, props.modDoorSpeaker, false) end
-        if props.modSeats then SetVehicleMod(vehicle, 32, props.modSeats, false) end
-        if props.modSteeringWheel then SetVehicleMod(vehicle, 33, props.modSteeringWheel, false) end
-        if props.modShifterLeavers then SetVehicleMod(vehicle, 34, props.modShifterLeavers, false) end
-        if props.modAPlate then SetVehicleMod(vehicle, 35, props.modAPlate, false) end
-        if props.modSpeakers then SetVehicleMod(vehicle, 36, props.modSpeakers, false) end
-        if props.modTrunk then SetVehicleMod(vehicle, 37, props.modTrunk, false) end
-        if props.modHydrolic then SetVehicleMod(vehicle, 38, props.modHydrolic, false) end
-        if props.modEngineBlock then SetVehicleMod(vehicle, 39, props.modEngineBlock, false) end
-        if props.modAirFilter then SetVehicleMod(vehicle, 40, props.modAirFilter, false) end
-        if props.modStruts then SetVehicleMod(vehicle, 41, props.modStruts, false) end
-        if props.modArchCover then SetVehicleMod(vehicle, 42, props.modArchCover, false) end
-        if props.modAerials then SetVehicleMod(vehicle, 43, props.modAerials, false) end
-        if props.modTrimB then SetVehicleMod(vehicle, 44, props.modTrimB, false) end
-        if props.modTank then SetVehicleMod(vehicle, 45, props.modTank, false) end
-        if props.modWindows then SetVehicleMod(vehicle, 46, props.modWindows, false) end
-        if props.modKit47 then SetVehicleMod(vehicle, 47, props.modKit47, false) end
-        if props.modLivery then SetVehicleMod(vehicle, 48, props.modLivery, false) SetVehicleLivery(vehicle, props.modLivery) end
-        if props.modKit49 then SetVehicleMod(vehicle, 49, props.modKit49, false) end
-        if props.liveryRoof then SetVehicleRoofLivery(vehicle, props.liveryRoof) end
-		if props.modDrift then SetDriftTyresEnabled(vehicle, true) end
-		SetVehicleTyresCanBurst(vehicle, not props.modBProofTires)
-		TriggerServerEvent('jim-mechanic:server:loadStatus', props, VehToNet(vehicle))
-    end
-end
-```
-
-## QB-MechanicJob
-- **You don't NEED qb-mechaicjob to use Jim-Mechanic but doing so grants extra features**
-- Extra damages will be enabled by default if you use `qb-mechanicjob` and `qb-vehiclefailure`
-- If you **DON'T** want to use `qb-mechanicjob` but want to keep `qb-vehiclefailure`
-- REPLACE this event (DON'T REMOVE) in qb-vehiclefailure > client.lua.
-- This will make it only work if qb-mechanicjob is started.
-
-```lua
--- Functions
-local function DamageRandomComponent()
-
-	if GetResourceState('qb-mechanicjob') ~= "started" then return end
-
-    local dmgFctr = math.random() + math.random(0, 2)
-    local randomComponent = DamageComponents[math.random(1, #DamageComponents)]
-    local randomDamage = (math.random() + math.random(0, 1)) * dmgFctr
-    exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent, exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent) - randomDamage)
-end
-```
-## QB-MechanicJob Optimization
-- I recently realised that `qb-mechanicjob` by default has a seemingly currently unnecessary database change, every 2 seconds of driving a vehicle.
-	- Some servers have over 100 people in. If all players are in cars at the same time that would be 100 database changes every 2 seconds.
-- Long explanation is that the distance travelled is set to `0` on script/server starts
-	- As you drive your car it updates the distance travelled.
-	- This is then used to calculate damages and other things.
-	- This is saved server side but also updates the database with the numbers.
-	- This isn't needed to be saved as it is saved server side already and never calls it FROM the database and is just a waste and laggy
-- **TLDR**: `qb-mechanicjob` has a useless database check that can cause lag for servers with lots of players
-```lua
--- Go to qb-mechanicjob server/main.lua and find:
-RegisterNetEvent('qb-vehicletuning:server:UpdateDrivingDistance', function(amount, plate)
-
--- Remove or comment out:
-local result = MySQL.Sync.fetchAll('SELECT plate FROM player_vehicles WHERE plate = ?', {plate})
-if result[1] ~= nil then
-    MySQL.Async.execute('UPDATE player_vehicles SET drivingdistance = ? WHERE plate = ?', {amount, plate})
-end
-```
-- It will work exactly the same way but no extra database lag
-
-## Blue Nos Flames / Nopixel Style
-- [Download the FiveM version of this file](https://www.gta5-mods.com/misc/purple-blue-flames-replace-sp-fivem)
-- UnZip the file
-- Copy the `stream` folder into the `jim-mechanic` folder (next to the fxmanifest.lua)
-- That's it! The effects are show while boosting and the different styles change between boost levels
-- Restart the script. Done.
-
-## Support for CodeM-Hud
-- Had a few people asking about CodeM hud support for NOS
-- I assume their HUD's are similar and this will work for most
-- Simply add this line at the bottom of the HUD scripts nitro.lua
-```lua
-RegisterNetEvent("hud:client:UpdateNitrous", function(hasnitro, level, show) SendNUIMessage({ type="set_status", statustype = "nitro", value = (level or 0)}) end)
-```
-- This will make `jim-mechanic` trigger the HUD's NOS level changes
